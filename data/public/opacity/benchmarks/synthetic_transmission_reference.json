@@ -1,0 +1,17 @@
+{
+  "case_id": "synthetic-opacity-reference",
+  "description": "Synthetic transmission-spectrum benchmark used to verify Bayesian opacity model averaging.",
+  "observed": {
+    "wavelength_microns": [1.1, 1.3, 1.5, 1.7, 1.9],
+    "flux": [1.01, 0.97, 0.92, 0.88, 0.86],
+    "uncertainty": [0.01, 0.01, 0.01, 0.01, 0.01]
+  },
+  "candidates": {
+    "hitran2020": [1.01, 0.969, 0.921, 0.881, 0.859],
+    "hitemp": [0.99, 0.95, 0.94, 0.9, 0.89],
+    "pokazatel_h2o": [1.05, 1.01, 0.98, 0.95, 0.93],
+    "exoames_ch4": [0.96, 0.94, 0.9, 0.87, 0.83]
+  },
+  "expected_best_model": "hitran2020"
+}
+

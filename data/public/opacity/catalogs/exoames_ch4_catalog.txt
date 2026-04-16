@@ -1,0 +1,5 @@
+ExoMol ExoAmes CH4 public catalog placeholder for Tierra+.
+Source landing page: https://www.exomol.com/data/molecules/CH4/12C-1H4/34to10/
+Tracked purpose: local manifest verification and loader metadata only.
+Real line-list downloads require user-managed acquisition from the public provider.
+

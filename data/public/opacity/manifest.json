@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "identifier": "hitran2020",
+      "kind": "opacity_catalog",
+      "provider": "HITRAN",
+      "version": "2020",
+      "species": ["multi-species"],
+      "relative_path": "opacity/catalogs/hitran2020_catalog.txt",
+      "sha256": "ab576f4ec9e7cf45ec6f117f635b9d10d02215c4596b7b1dd8c5e3310b1e8369",
+      "source_url": "https://hitran.org/",
+      "download_url": null,
+      "manual_steps": "Acquire the canonical HITRAN2020 files from the public HITRAN distribution and place them in the configured data cache before scientific runs.",
+      "tracked_fixture": true
+    },
+    {
+      "identifier": "hitemp",
+      "kind": "opacity_catalog",
+      "provider": "HITEMP",
+      "version": "2019",
+      "species": ["multi-species"],
+      "relative_path": "opacity/catalogs/hitemp_catalog.txt",
+      "sha256": "13e8783c281c348003f218c763baa0711255231140765b3e5d4e9cb237712405",
+      "source_url": "https://hitran.org/hitemp/",
+      "download_url": null,
+      "manual_steps": "Acquire the canonical HITEMP files from the public provider and place them in the configured data cache before scientific runs.",
+      "tracked_fixture": true
+    },
+    {
+      "identifier": "pokazatel_h2o",
+      "kind": "opacity_catalog",
+      "provider": "ExoMol",
+      "version": "POKAZATEL",
+      "species": ["H2O"],
+      "relative_path": "opacity/catalogs/pokazatel_h2o_catalog.txt",
+      "sha256": "7d1097f430418c7a7f7fec5a12cdcb11d2f5d1215f0d86535933772615fccf14",
+      "source_url": "https://www.exomol.com/data/molecules/H2O/1H2-16O/POKAZATEL/",
+      "download_url": null,
+      "manual_steps": "Acquire the public POKAZATEL line list from ExoMol and place it in the configured data cache before scientific runs.",
+      "tracked_fixture": true
+    },
+    {
+      "identifier": "exoames_ch4",
+      "kind": "opacity_catalog",
+      "provider": "ExoMol",
+      "version": "ExoAmes",
+      "species": ["CH4"],
+      "relative_path": "opacity/catalogs/exoames_ch4_catalog.txt",
+      "sha256": "03e7935bd3f2bf2ca986bc3e1a09b210cdd316fcd7c95ed9c8b38f1d86a003d7",
+      "source_url": "https://www.exomol.com/data/molecules/CH4/12C-1H4/34to10/",
+      "download_url": null,
+      "manual_steps": "Acquire the public ExoAmes methane line list from ExoMol and place it in the configured data cache before scientific runs.",
+      "tracked_fixture": true
+    },
+    {
+      "identifier": "synthetic-opacity-reference",
+      "kind": "benchmark",
+      "provider": "Tierra+",
+      "version": "1",
+      "species": ["H2O", "CH4"],
+      "relative_path": "opacity/benchmarks/synthetic_transmission_reference.json",
+      "sha256": "c9c75a76c6eb3bb67239ba6aa1e37c338699f354d594712b7b13d5be9f1eaa52",
+      "source_url": "https://github.com/salma2vec/tierra-plus",
+      "download_url": null,
+      "manual_steps": null,
+      "tracked_fixture": true
+    }
+  ]
+}

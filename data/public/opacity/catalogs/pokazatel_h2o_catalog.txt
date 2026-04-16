@@ -1,0 +1,5 @@
+ExoMol POKAZATEL H2O public catalog placeholder for Tierra+.
+Source landing page: https://www.exomol.com/data/molecules/H2O/1H2-16O/POKAZATEL/
+Tracked purpose: local manifest verification and loader metadata only.
+Real line-list downloads require user-managed acquisition from the public provider.
+

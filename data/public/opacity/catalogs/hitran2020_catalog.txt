@@ -1,0 +1,5 @@
+HITRAN2020 public catalog placeholder for Tierra+.
+Source landing page: https://hitran.org/
+Tracked purpose: local manifest verification and loader metadata only.
+Real line-list downloads require user-managed acquisition from the public provider.
+
