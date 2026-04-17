@@ -4,9 +4,8 @@
 
 Tierra+ is a production-oriented Python package for calibrated atmospheric retrieval workflows,
 opacity-model comparison, backend-agnostic forward modeling, and the scientific provenance needed
-to support mission teams working with public spectra. The repository is intentionally package-first:
-we ship typed library interfaces, a CLI surface, reproducible data bootstrap paths, and public docs
-before claiming any scientific replication result.
+to support mission teams working with public spectra. The repository centers on typed library
+interfaces, a CLI surface, reproducible data bootstrap paths, and public docs.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-111827.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-2563eb.svg)](#building-and-local-setup)
@@ -22,17 +21,17 @@ before claiming any scientific replication result.
 ## What This Repository Ships Today
 
 - typed domain models for spectra, atmospheric states, backend configuration, and opacity metadata
-- a stable forward-model interface with explicit integration gaps for unresolved backends
+- a stable forward-model interface with adapter stubs for unresolved backends
 - an opacity registry and bootstrap path for public benchmark assets
 - Bayesian model averaging for comparing candidate opacity models
 - public Sphinx documentation and CI for linting, typing, tests, and docs builds
 
-## What Is Intentionally Not Shipped Yet
+## What Is Not Shipped Yet
 
 - a resolved upstream `tierra` submodule or fork
 - live `petitRADTRANS` backend execution
 - any scientific result that has not been reproduced with public inputs and passing tests
-- real JWST notebooks beyond clearly marked placeholders
+- JWST notebooks
 
 ## Architecture
 
@@ -53,7 +52,6 @@ flowchart LR
   DOCS --> CLI
   DOCS --> FM
   DOCS --> OP
-```
 ```
 
 ## Building And Local Setup
@@ -79,8 +77,8 @@ uv run tierra-plus retrieve \
   --composition-json '{"H2O": 0.2, "N2": 0.8}'
 ```
 
-The initial CLI intentionally fails with an explicit integration error until a canonical `tierra`
-source is selected and wired in.
+The initial CLI returns an integration error until a canonical `tierra` source is selected and
+wired in.
 
 ## Commands Overview
 

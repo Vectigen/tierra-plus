@@ -1,8 +1,8 @@
 # Tierra+ Docs
 
 Tierra+ is building a production-grade Python package for exoplanet atmospheric retrieval and
-near-Earth object characterization. This first public slice documents the stable interfaces we are
-ready to ship today and the explicit gaps we are not pretending are complete.
+near-Earth object characterization. These docs cover the current package surface, data bootstrap
+path, and adapter interfaces.
 
 ```{toctree}
 :maxdepth: 2
@@ -18,5 +18,4 @@ api/index
 - Install with `uv sync --dev`
 - Run tests with `uv run pytest -q`
 - Verify the CLI with `uv run tierra-plus --help`
-- Read the theory and API placeholders to understand what is shipped versus planned
-
+- Read the theory and API sections for the current package surface

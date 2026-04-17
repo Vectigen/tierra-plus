@@ -2,7 +2,7 @@
 
 ## Now
 
-- Resolve the canonical upstream `tierra` repository or fork and vendor it honestly.
+- Resolve the canonical upstream `tierra` repository or fork and vendor it.
 - Replace adapter placeholders with real backend wiring and fixture-backed tests.
 - Finish Week 1 acceptance around the opacity ensemble benchmark.
 
@@ -24,4 +24,3 @@
 - Public repo migration to `vectigen/tierra-plus`.
 - Exact `tierra` submodule selection.
 - Real JWST demo notebooks until the public data ingestion path exists.
-

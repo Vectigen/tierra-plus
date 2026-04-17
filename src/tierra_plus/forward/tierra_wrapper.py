@@ -15,9 +15,8 @@ class TierraForwardModel(ForwardModel):
 
     Notes
     -----
-    The package intentionally exposes this seam before the canonical upstream source is selected.
-    Until that dependency is resolved, calls fail with `IntegrationNotConfiguredError` instead of
-    pretending a scientific backend is available.
+    This seam is in place before the canonical upstream source is selected. Until that dependency
+    is resolved, calls raise `IntegrationNotConfiguredError`.
     """
 
     def _validate_backend(self) -> None:
@@ -32,7 +31,7 @@ class TierraForwardModel(ForwardModel):
                 f"Configured tierra data root '{self.config.data_root}' does not exist."
             )
         raise IntegrationNotConfiguredError(
-            "tierra adapter seam is present, but real backend wiring is intentionally unresolved."
+            "tierra adapter seam is present, but backend wiring has not been completed."
         )
 
     def transmission_spectrum(self, theta: AtmosphericState) -> Spectrum:

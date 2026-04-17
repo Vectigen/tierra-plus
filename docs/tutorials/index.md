@@ -1,6 +1,6 @@
 # Tutorials
 
-Tierra+ does not yet ship notebook-backed science tutorials. This is intentional.
+Tierra+ does not yet ship notebook-backed science tutorials.
 
 Planned tutorials:
 
@@ -10,4 +10,3 @@ Planned tutorials:
 
 Each tutorial will be added only after the corresponding code path, data manifest, and tests are
 public and reproducible.
-

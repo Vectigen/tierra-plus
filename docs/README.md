@@ -6,9 +6,8 @@ This repository keeps public documentation in `docs/`.
 - `plans/` is for implementation plans that help future contributors continue shipping.
 - local-only scratch notes should not be committed here.
 
-Keep the public repository honest:
+Keep the public repository consistent:
 
 - document only shipped behavior
 - mark placeholders clearly
 - keep planning separate from user-facing docs
-

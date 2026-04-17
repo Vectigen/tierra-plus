@@ -15,8 +15,8 @@ class PetitRadTransForwardModel(ForwardModel):
 
     Notes
     -----
-    The initial package exposes the API seam and validates environment setup, but it intentionally
-    fails until the backend wiring is implemented and tested against the selected public inputs.
+    The API seam validates environment setup and raises `IntegrationNotConfiguredError` until the
+    backend wiring is implemented and tested against the selected public inputs.
     """
 
     def _validate_backend(self) -> None:
@@ -31,8 +31,7 @@ class PetitRadTransForwardModel(ForwardModel):
                 f"Configured petitRADTRANS data root '{self.config.data_root}' does not exist."
             )
         raise IntegrationNotConfiguredError(
-            "petitRADTRANS adapter seam is present, but real backend wiring is "
-            "intentionally unresolved."
+            "petitRADTRANS adapter seam is present, but real backend wiring is " "not yet complete."
         )
 
     def transmission_spectrum(self, theta: AtmosphericState) -> Spectrum:
