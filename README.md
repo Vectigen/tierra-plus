@@ -114,6 +114,7 @@ tierra-plus/
 ## Documentation
 
 - Public docs live in [`docs/`](docs/)
+- Backend integration status and contract notes live in [`docs/backend-integration.md`](docs/backend-integration.md)
 - Execution plans live in [`plans/`](plans/)
 - Continuation work is tracked in [`BACKLOG.md`](BACKLOG.md)
 

@@ -8,6 +8,7 @@ path, and adapter interfaces.
 :maxdepth: 2
 :caption: Contents
 
+backend-integration
 theory/index
 tutorials/index
 api/index
