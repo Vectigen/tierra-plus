@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
-from pathlib import Path
 from typing import Any
 
 from tierra_plus.models import BackendConfig
@@ -42,24 +41,11 @@ class ReplayAsset:
 
 
 def _backend_config_to_dict(config: BackendConfig) -> dict[str, Any]:
-    return {
-        "backend_name": config.backend_name,
-        "module_name": config.module_name,
-        "data_root": config.data_root.as_posix() if config.data_root is not None else None,
-        "extra": dict(config.extra),
-    }
+    return config.to_dict()
 
 
 def _backend_config_from_dict(payload: Mapping[str, Any]) -> BackendConfig:
-    data_root = payload.get("data_root")
-    return BackendConfig(
-        backend_name=str(payload["backend_name"]),
-        module_name=(
-            str(payload["module_name"]) if payload.get("module_name") is not None else None
-        ),
-        data_root=Path(str(data_root)) if data_root is not None else None,
-        extra=dict(payload.get("extra", {})),
-    )
+    return BackendConfig.from_dict(payload)
 
 
 @dataclass(frozen=True)

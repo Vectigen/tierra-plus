@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import pytest
 
-from tierra_plus.cli import main
+from tierra_plus.cli import (
+    PETITRADTRANS_SOURCE_URL,
+    TIERRA_SOURCE_URL,
+    _build_backend,
+    main,
+)
 
 
 def test_cli_version_exits_cleanly(capsys: pytest.CaptureFixture[str]) -> None:
@@ -38,3 +43,15 @@ def test_cli_retrieve_reports_unconfigured_backend(
 
     assert exit_code == 2
     assert "not configured" in captured.err
+
+
+def test_cli_backend_defaults_include_public_source_metadata() -> None:
+    tierra = _build_backend("tierra")
+    petitradtrans = _build_backend("petitradtrans")
+
+    assert tierra.config.source_kind == "git"
+    assert tierra.config.source_location == TIERRA_SOURCE_URL
+    assert tierra.config.install_status == "not_installed"
+    assert petitradtrans.config.source_kind == "pip"
+    assert petitradtrans.config.source_location == PETITRADTRANS_SOURCE_URL
+    assert petitradtrans.config.install_status == "not_installed"

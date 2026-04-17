@@ -6,6 +6,7 @@ from tierra_plus.exceptions import IntegrationNotConfiguredError
 from tierra_plus.forward.backend_contract import (
     BackendContract,
     BackendSourceKind,
+    backend_contract_for_petitradtrans,
     backend_contract_for_tierra,
 )
 
@@ -32,9 +33,18 @@ def test_backend_contract_exposes_required_metadata() -> None:
     }
 
 
-def test_backend_contract_reports_transmission_and_emission_modes() -> None:
+def test_tierra_contract_reports_public_source_and_transmission_mode() -> None:
     contract = backend_contract_for_tierra()
 
+    assert contract.source_location == "https://github.com/disruptiveplanets/tierra"
+    assert contract.supported_modes == ("transmission",)
+
+
+def test_petitradtrans_contract_reports_public_source_and_both_modes() -> None:
+    contract = backend_contract_for_petitradtrans()
+
+    assert contract.source_kind is BackendSourceKind.PIP
+    assert contract.source_location == "https://gitlab.com/mauricemolli/petitRADTRANS"
     assert contract.supported_modes == ("transmission", "emission")
 
 

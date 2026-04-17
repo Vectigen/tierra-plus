@@ -56,6 +56,10 @@ def test_replay_manifest_round_trips_through_dict_payload() -> None:
     backend = BackendConfig(
         backend_name="tierra",
         module_name="tierra.backend",
+        source_kind="git",
+        source_location="https://github.com/disruptiveplanets/tierra",
+        source_revision="4553a19d1eab333a8a4d6e7aab65fb7ad8e7ebc9",
+        install_status="partially_configured",
         data_root=Path("data/public"),
         extra={"mode": "transmission"},
     )
@@ -77,6 +81,8 @@ def test_replay_manifest_round_trips_through_dict_payload() -> None:
     payload = manifest.to_dict()
 
     assert payload["seed"] == 7
+    assert payload["backend"]["source_kind"] == "git"
+    assert payload["backend"]["source_revision"] == "4553a19d1eab333a8a4d6e7aab65fb7ad8e7ebc9"
     assert payload["backend"]["data_root"] == Path("data/public").as_posix()
     assert payload["assets"][0]["identifier"] == "synthetic-spectrum"
     assert ReplayManifest.from_dict(payload) == manifest

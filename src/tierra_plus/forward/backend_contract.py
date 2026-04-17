@@ -83,7 +83,20 @@ def backend_contract_for_tierra() -> BackendContract:
     return BackendContract(
         backend_name="tierra",
         source_kind=BackendSourceKind.GIT,
-        source_location="unknown",
+        source_location="https://github.com/disruptiveplanets/tierra",
+        source_version="unknown",
+        installed=False,
+        supported_modes=("transmission",),
+    )
+
+
+def backend_contract_for_petitradtrans() -> BackendContract:
+    """Return the current petitRADTRANS backend contract placeholder."""
+
+    return BackendContract(
+        backend_name="petitRADTRANS",
+        source_kind=BackendSourceKind.PIP,
+        source_location="https://gitlab.com/mauricemolli/petitRADTRANS",
         source_version="unknown",
         installed=False,
         supported_modes=("transmission", "emission"),

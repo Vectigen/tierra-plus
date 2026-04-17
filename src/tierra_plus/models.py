@@ -152,8 +152,100 @@ class BackendConfig:
 
     backend_name: str
     module_name: str | None = None
+    source_kind: str | None = None
+    source_location: str | None = None
+    source_revision: str | None = None
+    install_status: str = "unknown"
     data_root: Path | None = None
     extra: Mapping[str, str] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        if not self.backend_name.strip():
+            raise ValueError("BackendConfig.backend_name must not be empty.")
+
+        normalized_module_name = self.module_name.strip() if self.module_name is not None else None
+        if normalized_module_name == "":
+            raise ValueError("BackendConfig.module_name must not be empty when provided.")
+
+        normalized_source_kind = self.source_kind.strip() if self.source_kind is not None else None
+        if normalized_source_kind == "":
+            raise ValueError("BackendConfig.source_kind must not be empty when provided.")
+
+        normalized_source_location = (
+            self.source_location.strip() if self.source_location is not None else None
+        )
+        if normalized_source_location == "":
+            raise ValueError("BackendConfig.source_location must not be empty when provided.")
+
+        normalized_source_revision = (
+            self.source_revision.strip() if self.source_revision is not None else None
+        )
+        if normalized_source_revision == "":
+            raise ValueError("BackendConfig.source_revision must not be empty when provided.")
+
+        valid_install_statuses = {
+            "unknown",
+            "not_installed",
+            "installed",
+            "partially_configured",
+        }
+        normalized_install_status = self.install_status.strip()
+        if normalized_install_status not in valid_install_statuses:
+            raise ValueError(
+                "BackendConfig.install_status must be one of " f"{sorted(valid_install_statuses)}."
+            )
+
+        normalized_extra = {str(key): str(value) for key, value in self.extra.items()}
+
+        object.__setattr__(self, "module_name", normalized_module_name)
+        object.__setattr__(self, "source_kind", normalized_source_kind)
+        object.__setattr__(self, "source_location", normalized_source_location)
+        object.__setattr__(self, "source_revision", normalized_source_revision)
+        object.__setattr__(self, "install_status", normalized_install_status)
+        object.__setattr__(self, "data_root", Path(self.data_root) if self.data_root else None)
+        object.__setattr__(self, "extra", normalized_extra)
+
+    def to_dict(self) -> dict[str, Any]:
+        """Serialize the backend configuration into JSON-compatible primitives."""
+
+        return {
+            "backend_name": self.backend_name,
+            "module_name": self.module_name,
+            "source_kind": self.source_kind,
+            "source_location": self.source_location,
+            "source_revision": self.source_revision,
+            "install_status": self.install_status,
+            "data_root": self.data_root.as_posix() if self.data_root is not None else None,
+            "extra": dict(self.extra),
+        }
+
+    @classmethod
+    def from_dict(cls, payload: Mapping[str, Any]) -> BackendConfig:
+        """Construct a backend configuration from a mapping payload."""
+
+        data_root = payload.get("data_root")
+        return cls(
+            backend_name=str(payload["backend_name"]),
+            module_name=(
+                str(payload["module_name"]) if payload.get("module_name") is not None else None
+            ),
+            source_kind=(
+                str(payload["source_kind"]) if payload.get("source_kind") is not None else None
+            ),
+            source_location=(
+                str(payload["source_location"])
+                if payload.get("source_location") is not None
+                else None
+            ),
+            source_revision=(
+                str(payload["source_revision"])
+                if payload.get("source_revision") is not None
+                else None
+            ),
+            install_status=str(payload.get("install_status", "unknown")),
+            data_root=Path(str(data_root)) if data_root is not None else None,
+            extra={str(key): str(value) for key, value in dict(payload.get("extra", {})).items()},
+        )
 
 
 @dataclass(frozen=True)

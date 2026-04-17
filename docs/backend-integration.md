@@ -7,8 +7,8 @@ as production-ready integrations.
 
 | Backend | Status | Contract Notes |
 | --- | --- | --- |
-| `tierra` | unresolved upstream selection | Contract metadata exists, but the source location and version remain unknown until a canonical upstream is pinned. |
-| `petitRADTRANS` | adapter seam only | The package exposes a stable wrapper interface, but live execution is still gated behind missing backend wiring. |
+| `tierra` | canonical public repo identified, integration still blocked | The public upstream candidate is `disruptiveplanets/tierra`, but Tierra+ does not treat it as production-ready until a reproducible revision and data path are pinned in this repo. |
+| `petitRADTRANS` | first live backend target | The official source of truth is the upstream GitLab project; Tierra+ records that source now, but live execution is still gated behind missing backend wiring and public-input verification. |
 
 ## Contract Shape
 
@@ -21,8 +21,9 @@ The backend contract records:
 - installation status
 - supported call modes
 
-The current Tierra placeholder contract supports both `transmission` and `emission` call modes and
-raises an explicit `IntegrationNotConfiguredError` when source identity is still unknown.
+The current `tierra` placeholder contract is intentionally conservative: it records the public
+source location, marks the version as unresolved, and only advertises `transmission` until
+emission support is pinned and verified.
 
 ## Acceptance Criteria For An Upstream Backend
 
@@ -40,3 +41,8 @@ An upstream backend can be accepted into Tierra+ when all of the following are t
 
 This document describes the integration contract, not a scientific validation result. The package
 still requires public-data-backed verification before any backend is treated as canonical.
+
+The current public upstream references tracked by Tierra+ are:
+
+- `tierra`: [https://github.com/disruptiveplanets/tierra](https://github.com/disruptiveplanets/tierra)
+- `petitRADTRANS`: [https://gitlab.com/mauricemolli/petitRADTRANS](https://gitlab.com/mauricemolli/petitRADTRANS)
