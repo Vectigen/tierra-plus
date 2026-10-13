@@ -98,3 +98,12 @@ sampler settings and calibration diagnostics. A passing software example alone
 does not establish calibration on real observations.
 
 Apache-2.0 licensed. See [LICENSE](LICENSE).
+
+### Current retrieval context
+
+[Barstow and Welbanks (2026), *Computational challenges in exoplanet atmospheric
+retrieval*](https://link.springer.com/article/10.1007/s41115-026-00031-9) reviews
+sensitivity to forward-model assumptions, priors, likelihoods and interpretation
+as JWST data improve. Tierra+ currently validates its inference plumbing with
+synthetic examples. Cross-code radiative-transfer comparisons, correlated-noise
+models and real-data interpretation require separate validation.
