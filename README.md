@@ -25,6 +25,11 @@ weighted samples, evidence uncertainty, effective sample size and residual check
 It uses no API, external data or paid compute. The spectral feature is a mathematical
 test model, **not a molecular opacity or radiative-transfer calculation**.
 
+A [20-run repeated-noise check](examples/results/README.md) retains all raw fits.
+Nominal 90% intervals covered the fixed truth in 18/20 baseline-depth runs and
+16/20 feature-amplitude runs; the reported uncertainty is wide. This is a synthetic
+software check, not prior-predictive calibration or validation on atmospheres.
+
 ## What works
 
 - `Spectrum` validates finite flux, positive uncertainties and an increasing wavelength grid.

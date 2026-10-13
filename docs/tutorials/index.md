@@ -27,3 +27,9 @@ is not promised.
 The tests additionally compare a one-dimensional Gaussian posterior and known
 evidence with a real dynesty run. No real-observation or atmospheric-backend
 replication is included yet.
+
+The source checkout also includes `examples/coverage_check.py` and complete repeated-noise
+records under `examples/results/`. In 20 runs, nominal 90% intervals covered the
+fixed baseline depth in 18 runs and feature amplitude in 16. The recorded Wilson
+intervals are wide; the second parameter under-covers in this small experiment.
+This is fixed-truth software validation, not prior-predictive SBC.
