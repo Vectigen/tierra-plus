@@ -22,9 +22,15 @@ class PetitRadTransForwardModel(ForwardModel):
     def _validate_backend(self) -> None:
         module_name = self.config.module_name or "petitRADTRANS"
         if importlib.util.find_spec(module_name) is None:
+            source_hint = (
+                f" Expected source: {self.config.source_location}."
+                if self.config.source_location is not None
+                else ""
+            )
             raise IntegrationNotConfiguredError(
                 f"petitRADTRANS backend module '{module_name}' is not installed. "
                 "Install and validate the backend before use."
+                f"{source_hint}"
             )
         if self.config.data_root is not None and not Path(self.config.data_root).exists():
             raise IntegrationNotConfiguredError(

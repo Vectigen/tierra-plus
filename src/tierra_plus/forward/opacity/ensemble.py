@@ -58,11 +58,21 @@ def posterior_weights_for_case(
     case: BenchmarkCase,
     priors: Mapping[str, float] | None = None,
 ) -> EnsembleWeightResult:
-    """Return posterior weights for a benchmark case via Bayesian model averaging."""
+    """Weight fixed candidate spectra using Gaussian likelihoods and model priors.
+
+    A fixed spectrum is a point hypothesis: this does not marginalize atmospheric
+    parameters and must not be interpreted as evidence for a fitted model.
+    """
 
     prior_weights = priors if priors is not None else {name: 1.0 for name in case.candidates}
+    if not case.candidates or set(prior_weights) != set(case.candidates):
+        raise ValueError("Priors must match a nonempty set of candidates")
+    if any(not np.isfinite(v) or v <= 0 for v in prior_weights.values()):
+        raise ValueError("Model prior weights must be finite and strictly positive")
+    prior_total = sum(prior_weights.values())
     log_evidences = {
-        name: gaussian_log_likelihood(case.observed, candidate) + log(prior_weights[name])
+        name: gaussian_log_likelihood(case.observed, candidate)
+        + log(prior_weights[name] / prior_total)
         for name, candidate in case.candidates.items()
     }
     evidence_values = np.asarray(tuple(log_evidences.values()))

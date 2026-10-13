@@ -13,6 +13,9 @@ from tierra_plus.models import OpacityModelSpec
 def default_data_root() -> Path:
     """Return the repository's tracked public data root."""
 
+    bundled = Path(__file__).resolve().parents[2] / "data" / "public"
+    if bundled.is_dir():
+        return bundled
     return Path(__file__).resolve().parents[4] / "data" / "public"
 
 

@@ -1,12 +1,29 @@
-# Tutorials
+# A reproducible synthetic retrieval
 
-Tierra+ does not yet ship notebook-backed science tutorials.
+From a source checkout:
 
-Planned tutorials:
+```bash
+uv sync --dev --extra inference
+uv run python examples/synthetic_retrieval.py --seed 42 --output /tmp/tierra-demo.json
+```
 
-- K2-18b walkthrough
-- WASP-96b GP residual walkthrough
-- synthetic super-Earth opacity challenge walkthrough
+The model is a baseline transit depth plus a Gaussian-shaped basis function centered
+at 1.4 microns. Both coefficients have bounded uniform priors. Forty synthetic bins
+have known independent Gaussian uncertainty. The wavelength is illustrative; the
+feature is not a species identification or opacity table.
 
-Each tutorial will be added only after the corresponding code path, data manifest, and tests are
-public and reproducible.
+The output records the generated spectrum, injected parameters, priors, sampler
+configuration and package versions, plus a canonical input hash. Compare
+`posterior_mean` with `analytic_mean`, and inspect `mean_error_in_analytic_sigma`.
+The analytic comparison assumes the posterior is far from prior boundaries.
+`posterior_mean_chi_square` is a residual diagnostic, not a detection significance.
+
+`posterior.samples` are weighted nested-sampling points. Use `posterior.weights`
+for means, variances and posterior prediction. The output also records log evidence,
+evidence error and effective sample size. Replaying the same software environment
+and seed reproduces the input and sampler sequence; cross-version bitwise identity
+is not promised.
+
+The tests additionally compare a one-dimensional Gaussian posterior and known
+evidence with a real dynesty run. No real-observation or atmospheric-backend
+replication is included yet.

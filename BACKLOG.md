@@ -1,26 +1,13 @@
-# Tierra+ Backlog
+# Research gaps
 
-## Now
+- Integrate a pinned radiative-transfer backend and public, hashed opacity assets.
+- Verify instrument binning and wavelength conventions against a published reference.
+- Extend likelihoods to justified correlated-noise models and validate those assumptions.
+- Fit stellar-contamination parameters jointly with the planetary model using atmosphere grids.
+- Add prior-predictive simulation-based calibration and posterior-predictive checks across seeds.
+- Compare opacity models using parameter-marginalized evidence and sensitivity to prior choices.
+- Reproduce a published public-spectrum analysis with versioned inputs and documented discrepancies.
+- Implement a distinct, validated NEO inference path before advertising that capability.
 
-- Resolve the canonical upstream `tierra` repository or fork and vendor it.
-- Replace adapter placeholders with real backend wiring and fixture-backed tests.
-- Finish Week 1 acceptance around the opacity ensemble benchmark.
-
-## Next
-
-- Implement `dynesty` baseline sampling.
-- Add FMPE and importance-sampling verification.
-- Port provenance primitives for seeds, model hashes, and replayable runs.
-
-## Later
-
-- Add joint stellar contamination latents and GP residual modeling.
-- Build the K2-18b degeneracy atlas workflow.
-- Package the REST surface, docs deployment, whitepaper, and outreach package.
-- Start the NEO vertical.
-
-## Blocked
-
-- Public repo migration to `vectigen/tierra-plus`.
-- Exact `tierra` submodule selection.
-- Real JWST demo notebooks until the public data ingestion path exists.
+The runnable synthetic example and analytic Gaussian test are software validation,
+not evidence that any of these scientific milestones is complete.

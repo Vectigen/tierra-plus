@@ -1,21 +1,20 @@
-# Tierra+ Docs
+# Tierra+ documentation
 
-Tierra+ is building a production-grade Python package for exoplanet atmospheric retrieval and
-near-Earth object characterization. These docs cover the current package surface, data bootstrap
-path, and adapter interfaces.
+Tierra+ provides spectral likelihoods, seeded nested sampling, weighted posterior
+output, stellar intensity mixing, and provenance utilities for retrieval research.
+The synthetic example has analytic validation; atmospheric backend adapters and
+NEO inference are not implemented.
 
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
 
+backend-integration
 theory/index
 tutorials/index
 api/index
 ```
 
-## Start Here
-
-- Install with `uv sync --dev`
-- Run tests with `uv run pytest -q`
-- Verify the CLI with `uv run tierra-plus --help`
-- Read the theory and API sections for the current package surface
+Install with `uv sync --dev --extra inference`, run `uv run pytest -q`, and follow
+the tutorial for an executable local retrieval. Read the theory page for assumptions
+and the distinction between software checks and scientific validation.

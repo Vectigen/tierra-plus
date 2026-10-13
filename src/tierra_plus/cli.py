@@ -13,6 +13,9 @@ from tierra_plus.forward.prt_wrapper import PetitRadTransForwardModel
 from tierra_plus.forward.tierra_wrapper import TierraForwardModel
 from tierra_plus.models import AtmosphericState, BackendConfig
 
+TIERRA_SOURCE_URL = "https://github.com/disruptiveplanets/tierra"
+PETITRADTRANS_SOURCE_URL = "https://gitlab.com/mauricemolli/petitRADTRANS"
+
 
 def build_parser() -> argparse.ArgumentParser:
     """Build the top-level argument parser for the Tierra+ CLI."""
@@ -33,9 +36,23 @@ def build_parser() -> argparse.ArgumentParser:
 
 def _build_backend(name: str) -> TierraForwardModel | PetitRadTransForwardModel:
     if name == "tierra":
-        return TierraForwardModel(BackendConfig(backend_name="tierra", module_name="tierra"))
+        return TierraForwardModel(
+            BackendConfig(
+                backend_name="tierra",
+                module_name="tierra",
+                source_kind="git",
+                source_location=TIERRA_SOURCE_URL,
+                install_status="not_installed",
+            )
+        )
     return PetitRadTransForwardModel(
-        BackendConfig(backend_name="petitRADTRANS", module_name="petitRADTRANS")
+        BackendConfig(
+            backend_name="petitRADTRANS",
+            module_name="petitRADTRANS",
+            source_kind="pip",
+            source_location=PETITRADTRANS_SOURCE_URL,
+            install_status="not_installed",
+        )
     )
 
 

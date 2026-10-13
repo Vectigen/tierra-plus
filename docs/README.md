@@ -1,13 +1,10 @@
-# Public Docs Boundary
+# Documentation
 
-This repository keeps public documentation in `docs/`.
+Build the public package documentation from the repository root:
 
-- `docs/` is the public package documentation surface.
-- `plans/` is for implementation plans that help future contributors continue shipping.
-- local-only scratch notes should not be committed here.
+```bash
+LC_ALL=C LANG=C uv run sphinx-build -M html docs docs/_build -W
+```
 
-Keep the public repository consistent:
-
-- document only shipped behavior
-- mark placeholders clearly
-- keep planning separate from user-facing docs
+The tutorial describes the synthetic retrieval, the API page lists the shipped
+interfaces, and the theory page records assumptions and research references.
