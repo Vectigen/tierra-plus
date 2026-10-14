@@ -1,0 +1,20 @@
+{
+  "status": "started",
+  "source_commit": "12bbe9d17d3b2a740ac0e1ce8c1597e95465f403",
+  "started_utc": "2026-10-14T15:53:46.782725+00:00",
+  "kind": "exploratory_diagnosis_of_exposed_v1_data",
+  "fresh_validation": false,
+  "original_report_sha256": "0dab43919ce7a33791c86a0743b143fdfbb966d30b067e17ffdedf83474e754a",
+  "numpy_version": "2.4.4",
+  "platform": "macOS-14.6-arm64-arm-64bit",
+  "protocol_sha256": "5e20576b1afe5b07927a1c3169ca5874fea545cb900e4f2f0c6b0ad8719def4e",
+  "method": "four fixed equal-count wavelength blocks, integrated offset, frozen estimators",
+  "error_threshold_dex": 0.25,
+  "matched_acceptance": 0.7,
+  "bootstrap_replicates": 2000,
+  "control_roles": {
+    "equilibrium": "full support includes original test states",
+    "union_oracle": "equal chemical-family prior; includes all exposed target states",
+    "family_envelope_oracle": "union of family-conditional intervals; includes all exposed target states"
+  }
+}

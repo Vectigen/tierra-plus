@@ -51,6 +51,11 @@ leave this promotion gate open. The next diagnostic must predict errors on fresh
 physical states better than a simple residual baseline; the exposed 116-state
 challenge cannot become its untouched test set.
 
+The completed [adequacy diagnosis](examples/results/spectral-adequacy/README.md)
+did not justify the more complex withheld-wavelength score over chi-square.
+Retain that negative result; model-family adequacy and fresh physical validation
+remain open, even though an oracle containing the correct family performs well.
+
 Add posterior or conditional uncertainty estimates only with explicit assumptions
 and held-out calibration tests. Separate prior-predictive computational calibration
 from robustness under a changed prior or observation model. For correlated noise,

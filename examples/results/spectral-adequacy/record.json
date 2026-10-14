@@ -1,0 +1,10 @@
+{
+  "source_commit": "12bbe9d17d3b2a740ac0e1ce8c1597e95465f403",
+  "status": "exploratory_diagnosis_complete",
+  "fresh_validation": false,
+  "report_sha256": "7ac74af27583fa0fcd3d16ead61080b951c4d9264f01bc898df5de5bdae22cdf",
+  "compressed_report_sha256": "afcb1ad8c3bb3c49e987f9583369761fb4904569cddb203c755b2fff4f09fa29",
+  "original_report_sha256": "0dab43919ce7a33791c86a0743b143fdfbb966d30b067e17ffdedf83474e754a",
+  "elapsed_seconds": 98.0191123340046,
+  "copies": "Score/prediction NPZ archives and provenance copied bytewise; report losslessly gzip-compressed."
+}

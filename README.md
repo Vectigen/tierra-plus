@@ -8,7 +8,7 @@ held-out atmospheric states, and exact reference calculations to distinguish
 useful corrections from reassuring diagnostics. Both successful controls and
 failed hypotheses are retained.
 
-The experiment uses **synthetic observations and known synthetic labels**, with its
+The first controlled experiment uses **synthetic observations and known synthetic labels**, with its
 grid, error scale and target shape anchored to hashed public WASP-39b PRISM assets.
 The target is a template amplitude, not a molecular abundance. This controlled
 problem makes paired interventions and exact reference solutions available; it
@@ -38,10 +38,12 @@ discrete metallicity labels, not continuous atmospheric precision.
 
 Read the [physical protocol](docs/physical-grid-protocol.md) and
 [complete results, width/abstention tradeoffs and reproduction commands](examples/results/physical-grid/README.md).
-The research question now has a concrete boundary: can predictive checks on
-wavelengths withheld from fitting expose these confident mistakes, while retaining
-a useful fraction of spectra? The exposed photochemical states are diagnosis data;
-a new method requires fresh held-out physics.
+The subsequent [adequacy diagnosis](examples/results/spectral-adequacy/README.md)
+found that withholding wavelength blocks adds little over ordinary residuals.
+High accepted coverage required rejecting most shifted spectra. Including the
+correct chemical family helped an oracle reference, but this does not identify
+missing physics automatically. These exposed states remain diagnosis data;
+a new reliability claim requires fresh held-out physics.
 
 ## Reproduce the causal experiment
 
