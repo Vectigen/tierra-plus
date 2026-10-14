@@ -1,5 +1,8 @@
 # Synthetic coverage check
 
+The separate [finite-grid reliability audit record](reliability-audit/README.md)
+contains the operational four-case demonstration and its negative full-panel result.
+
 These are measurements from 20 completed local runs of `examples/coverage_check.py`
 with noise seeds 1000 through 1019 and 90% weighted equal-tail posterior intervals.
 Each run uses 150 live points and `dlogz=0.05`. The two true parameters are fixed;

@@ -1,0 +1,80 @@
+{
+  "artifacts": {
+    "controls.json": "32f0a5c29bb5938110c4c4cdd14db5c20d280b4b6ce3ed0a5db9b4dfdbffe006",
+    "demo-design.json": "285dd321dcf34bd5c1a0644adf935ce266a8ec186cd1f59f3328b8540bfd716f",
+    "full-heldout-report.json": "bac1f9d39eae686d7472a3436b02b88b3a93663a40b328b30309f18171398bce",
+    "interior-label-report.json": "bfc9614402708536f0e1d7473915eac5c787652b44f9c9a232bf59676af7ea9c",
+    "wrong-family-report.json": "acfaae944edbf10993af7cb6f567c49ee62b3f397cba6d471acaaa0059db0920"
+  },
+  "cases": {
+    "fixed_photochemical_observation": {
+      "decision": "abstain",
+      "minimum_chi2": 394.2393525836046,
+      "reasons": [
+        "observation_score_above_calibrated_threshold",
+        "observation_interval_touches_support_boundary"
+      ],
+      "score_threshold": 146.9143448706477,
+      "state_index": 0
+    },
+    "full_state_qualification": {
+      "accepted": 22,
+      "accepted_coverage": 1.0,
+      "accepted_coverage_wilson95": [
+        0.8513451253913791,
+        1.0
+      ],
+      "acceptance": 0.6875,
+      "acceptance_wilson95": [
+        0.5143332169904459,
+        0.8204745836639026
+      ],
+      "decision": "abstain",
+      "reason": "validation_acceptance_below_floor",
+      "score_threshold": 145.55836228927046,
+      "validation_states": 32
+    },
+    "geometry_mismatch": {
+      "decision": "rejected",
+      "reason": "observation wavelength centers differ from support exactly",
+      "shift_microns": 1e-06
+    },
+    "interior_label_software_example": {
+      "accepted": 11,
+      "accepted_coverage": 1.0,
+      "accepted_coverage_wilson95": [
+        0.7411670330319684,
+        1.0
+      ],
+      "acceptance": 0.9166666666666666,
+      "acceptance_wilson95": [
+        0.646120088858883,
+        0.9851349055950829
+      ],
+      "decision": "conditional_accept",
+      "labels": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "status": "outcome-informed software-path example only",
+      "validation_states": 12
+    }
+  },
+  "criteria": {
+    "maximum_interval_width": 0.6,
+    "minimum_acceptance": 0.7,
+    "minimum_accepted_coverage": 0.85,
+    "minimum_states": 10,
+    "score_quantile": 0.9
+  },
+  "fresh_validation": false,
+  "inputs": {
+    "photochemical_grid_sha256": "18b8a61bed2291e418a13d0663284daa7ab1dfa2a22bea01569b38d6bd6aeb12",
+    "rcte_grid_sha256": "cc6ff2c163069cfb1ab5b8172b3e5da963b9993610a42af6ef7d063c9af5c013"
+  },
+  "method_source_sha256": "96c7bf99c036dd7ebef39c1e6c02b5337e72dd4ad5e0e0d80a210e3cb4106200",
+  "schema_version": 1,
+  "status": "exploratory_negative",
+  "writer_source_sha256": "bbda86730b1546d77fcb445509fa30ca58ac09b6de6d3d806a43d76f446a9952"
+}

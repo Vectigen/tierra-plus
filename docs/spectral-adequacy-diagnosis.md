@@ -113,5 +113,6 @@ checkout. Only NumPy and the existing prepared public grids are required. The
 runner writes source/input provenance, exact per-observation score archives,
 selection summaries and paired-state bootstrap results; it retains a failure
 record if a run stops. The earlier [physical-grid protocol](physical-grid-protocol.md)
-and [data attribution](../examples/data/physical-grid/README.md) continue to apply.
+and [data attribution](https://github.com/Vectigen/tierra-plus/blob/main/examples/data/physical-grid/README.md)
+continue to apply.
 No new radiative transfer, real observed-depth retrieval or external GPU is used.

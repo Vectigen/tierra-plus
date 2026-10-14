@@ -25,6 +25,7 @@ as continuous atmospheric precision.
 causal-reliability-protocol
 physical-grid-protocol
 spectral-adequacy-diagnosis
+reliability-audit
 theory/index
 tutorials/index
 api/index

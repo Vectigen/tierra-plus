@@ -8,6 +8,38 @@ held-out atmospheric states, and exact reference calculations to distinguish
 useful corrections from reassuring diagnostics. Both successful controls and
 failed hypotheses are retained.
 
+## Run a reliability audit
+
+The supported `audit` command goes from a supplied finite spectral grid to one
+inference with an empirical accept/abstain decision and explicit failure reasons.
+This copy-paste demonstration uses the bundled, already exposed physical assets:
+
+```bash
+git clone https://github.com/Vectigen/tierra-plus.git
+cd tierra-plus
+uv sync --dev
+AUDIT_DEMO=$(mktemp -d)
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+uv run python -m examples.reliability_audit_demo --output "$AUDIT_DEMO/run"
+```
+
+It creates four recorded cases: full-state qualification, an outcome-informed
+interior-label software example, a fixed photochemical observation, and a geometry
+rejection. Read the [standalone result](examples/results/reliability-audit/README.md)
+and the [bundle input format](docs/reliability-audit.md#input-bundles) before using
+your own support, calibration, validation and observation data. A
+`conditional_accept` remains conditional on the supplied finite model family and
+empirical validation; it is not a general reliability certificate.
+
+The bundled physical demo's lead full panel uses all 32 exposed RCTE calibration
+states and all 32 exposed RCTE validation states. Under the corrected operational
+rule it abstains: 22/32 states are accepted (68.75%, below the 70% floor), while all
+22 accepted intervals cover their discrete labels. A separately labelled,
+outcome-informed interior-label panel accepts 11/12 states and exists only to
+exercise the accept path; it is invalid as general RCTE qualification. An earlier
+demo that omitted boundary abstention from validation is retained as invalidated
+development evidence, not as a research acceptance.
+
 The first controlled experiment uses **synthetic observations and known synthetic labels**, with its
 grid, error scale and target shape anchored to hashed public WASP-39b PRISM assets.
 The target is a template amplitude, not a molecular abundance. This controlled

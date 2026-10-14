@@ -6,12 +6,14 @@ import argparse
 import json
 import sys
 from collections.abc import Sequence
+from pathlib import Path
 
 from tierra_plus import __version__
 from tierra_plus.exceptions import IntegrationNotConfiguredError
 from tierra_plus.forward.prt_wrapper import PetitRadTransForwardModel
 from tierra_plus.forward.tierra_wrapper import TierraForwardModel
 from tierra_plus.models import AtmosphericState, BackendConfig
+from tierra_plus.reliability import AuditCriteria, run_reliability_audit, write_audit_report
 
 TIERRA_SOURCE_URL = "https://github.com/disruptiveplanets/tierra"
 PETITRADTRANS_SOURCE_URL = "https://gitlab.com/mauricemolli/petitRADTRANS"
@@ -31,6 +33,20 @@ def build_parser() -> argparse.ArgumentParser:
     retrieve.add_argument("--radius-rjup", type=float, required=True)
     retrieve.add_argument("--gravity-ms2", type=float, required=True)
     retrieve.add_argument("--composition-json", required=True)
+
+    audit = subparsers.add_parser(
+        "audit", help="Screen one spectrum with a calibrated finite-grid reliability contract."
+    )
+    audit.add_argument("--support", type=Path, required=True)
+    audit.add_argument("--calibration", type=Path, required=True)
+    audit.add_argument("--validation", type=Path, required=True)
+    audit.add_argument("--observation", type=Path, required=True)
+    audit.add_argument("--output", type=Path, required=True)
+    audit.add_argument("--score-quantile", type=float, default=0.9)
+    audit.add_argument("--minimum-states", type=int, default=10)
+    audit.add_argument("--minimum-acceptance", type=float, default=0.7)
+    audit.add_argument("--minimum-accepted-coverage", type=float, default=0.85)
+    audit.add_argument("--maximum-interval-width", type=float, default=0.6)
     return parser
 
 
@@ -74,6 +90,28 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(list(argv) if argv is not None else None)
     if args.command is None:
         parser.print_help()
+        return 0
+    if args.command == "audit":
+        try:
+            criteria = AuditCriteria(
+                score_quantile=args.score_quantile,
+                minimum_states=args.minimum_states,
+                minimum_acceptance=args.minimum_acceptance,
+                minimum_accepted_coverage=args.minimum_accepted_coverage,
+                maximum_interval_width=args.maximum_interval_width,
+            )
+            report = run_reliability_audit(
+                args.support,
+                args.calibration,
+                args.validation,
+                args.observation,
+                criteria,
+            )
+            write_audit_report(report, args.output)
+        except (OSError, ValueError) as error:
+            print(f"Tierra+ audit rejected input: {error}", file=sys.stderr)
+            return 2
+        print(json.dumps({"decision": report["decision"], "output": str(args.output)}))
         return 0
     composition = json.loads(args.composition_json)
     state = AtmosphericState(

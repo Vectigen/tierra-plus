@@ -144,3 +144,42 @@ def test_diagnosis_rejects_untracked_source_before_reading_frozen_inputs(monkeyp
     monkeypatch.setattr(runner.subprocess, "check_output", fake_git)
     with pytest.raises(ValueError, match="clean committed"):
         runner.run(tmp_path / "missing", tmp_path / "missing", tmp_path / "output")
+
+
+@pytest.mark.parametrize("corruption", [None, "interval", "missing", "replicate_count"])
+def test_saved_bootstrap_replay_rejects_altered_uncertainty(corruption):
+    import gzip
+    import json
+    from pathlib import Path
+
+    from examples.replay_spectral_adequacy import verify_bootstraps
+
+    results = Path(__file__).resolve().parents[1] / "examples/results"
+    report = json.loads(
+        gzip.decompress((results / "spectral-adequacy/report.json.gz").read_bytes())
+    )
+    old = json.loads(gzip.decompress((results / "physical-grid/report.json.gz").read_bytes()))
+    run = report["runs"][0]
+    conditions = [
+        row["name"]
+        for row in old["config"]["primary_conditions"] + [old["config"]["secondary_condition"]]
+    ]
+    with np.load(
+        results / f"spectral-adequacy/seed-{run['seed']}.npz", allow_pickle=False
+    ) as archive:
+        scores = {key: archive[key] for key in archive.files}
+    with np.load(
+        results / f"physical-grid/seed-{run['seed']}/predictions.npz", allow_pickle=False
+    ) as archive:
+        saved = {key: archive[key] for key in archive.files}
+    if corruption == "interval":
+        run["paired_state_bootstrap"][0]["difference_95_percentile"] = [100.0, 101.0]
+    elif corruption == "missing":
+        run["paired_state_bootstrap"].pop()
+    elif corruption == "replicate_count":
+        run["paired_state_bootstrap"][0]["bootstrap_replicates"] = 1
+    if corruption is None:
+        assert verify_bootstraps(run, old, saved, scores, conditions) > 1
+    else:
+        with pytest.raises(ValueError, match="Bootstrap"):
+            verify_bootstraps(run, old, saved, scores, conditions)
