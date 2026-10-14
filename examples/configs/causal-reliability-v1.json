@@ -55,6 +55,6 @@
     "normalization": "Euclidean unit vector",
     "centering": "pooled discovery hidden mean",
     "operation": "remove one centered Euclidean projection; no refit",
-    "uncertainty": "separate validation-only residual SD for each frozen predictor"
+    "uncertainty": "validation-only residual RMS for each frozen predictor, no bias correction; decorrelated model uses its own rho=0 training prior"
   }
 }

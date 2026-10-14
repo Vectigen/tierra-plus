@@ -20,7 +20,6 @@ from pathlib import Path
 
 import h5py
 import numpy as np
-from scipy.stats import chi2
 
 from tierra_plus.forward.tabulated import bin_tabulated_spectrum
 from tierra_plus.inference import NestedSampler, NestedSamplerConfig
@@ -83,6 +82,8 @@ def load_inputs() -> tuple[Spectrum, np.ndarray, dict[str, object]]:
 
 def fit_offset(observed: Spectrum, template: np.ndarray, prior: UniformPrior, seed: int) -> dict:
     """Fit one additive depth parameter and compare to Gaussian quadrature."""
+    from scipy.stats import chi2
+
     y, sigma = np.asarray(observed.flux), np.asarray(observed.uncertainty)
     precision = 1 / sigma**2
     mean = float(np.sum((y - template) * precision) / precision.sum())

@@ -1,94 +1,117 @@
 # Tierra+
 
-**Reproducible inference components for spectral retrieval research.**
+**Causal reliability of spectral inverse models.**
 
-Tierra+ connects validated spectra and explicit priors to a seeded nested sampler,
-with weighted posterior output, evidence estimates, provenance hashes, and a simple
-stellar-contamination operator. It includes a runnable synthetic retrieval and
-analytic checks, plus a conditional comparison on published JWST data. Atmospheric
-radiative-transfer adapters and NEO inference remain
-unfinished; this is research software, not a validated mission pipeline.
+Tierra+ tests when a predictor's useful training correlation becomes misleading
+after deployment. Its first experiment asks whether a model can estimate a spectral
+feature accurately on ordinary test data while changing that estimate when only a
+nuisance changes. A second test asks whether removing a discovered hidden direction
+improves the resulting error/sensitivity tradeoff.
 
-## Reproduce the working example
+The experiment uses **synthetic observations and known synthetic labels**, with its
+grid, error scale and target shape anchored to hashed public WASP-39b PRISM assets.
+The target is a template amplitude, not a molecular abundance. This controlled
+problem makes paired interventions and exact reference solutions available; it
+does not establish a failure in a deployed atmospheric retrieval.
+
+Read the [frozen protocol](docs/causal-reliability-protocol.md),
+[experiment configuration](examples/configs/causal-reliability-v1.json), and
+[experiment records](examples/results/causal-reliability/README.md).
+The protocol fixes the hypotheses, controls, splits and decision rules before the
+main experiment. A hypothesis may fail; running the benchmark is not evidence that
+its correction works.
+
+## Reproduce the causal experiment
 
 ```bash
 git clone https://github.com/Vectigen/tierra-plus.git
 cd tierra-plus
-uv sync --dev --extra inference
+uv sync --dev
 uv run pytest -q
-uv run python examples/synthetic_retrieval.py --seed 42 --output /tmp/tierra-demo.json
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+uv run --with h5py==3.16.0 python -m examples.causal_reliability \
+  --config examples/configs/causal-reliability-v1.json \
+  --output /tmp/tierra-causal
 ```
 
-The example generates a noisy linear spectral feature, fits its depth and amplitude,
-and compares the weighted posterior mean with analytic weighted least squares.
-Its JSON output contains inputs, priors, seed, package versions, input hash,
-weighted samples, evidence uncertainty, effective sample size and residual checks.
-It uses no API, external data or paid compute. The spectral feature is a mathematical
-test model, **not a molecular opacity or radiative-transfer calculation**.
+The predictor and analytic controls use NumPy. HDF5 loading requires `h5py`; plotting
+is separate and optional. No GPU, hosted model or paid service is required.
 
-A [20-run repeated-noise check](examples/results/README.md) retains all raw fits.
-Nominal 90% intervals covered the fixed truth in 18/20 baseline-depth runs and
-16/20 feature-amplitude runs; the reported uncertainty is wide. This is a synthetic
-software check, not prior-predictive calibration or validation on atmospheres.
+## What would change the conclusion?
 
-The [published WASP-39b PRISM check](examples/results/wasp39-prism/README.md)
-uses original CC-BY-4.0 data and the authors' fixed PICASO model, with verified file
-hashes, explicit wavelength selection and bin integration. On 127 retained bins,
-the template plus a depth offset gives χ² = 247.891 for 126 degrees of freedom;
-the flat null gives 1751.400. **Both leave excess residual scatter** under the
-assumed independent errors. This is conditional inference on an existing model,
-not a fresh atmospheric retrieval or molecular detection.
+**Prior shift:** a small neural predictor must first fit the training distribution
+well. Only then can poor prediction and interval coverage under a reversed nuisance
+correlation qualify as the specified failure. The exact training-prior Bayes
+estimator is a mandatory control: ordinary Bayesian prior dependence must not be
+presented as a distinctive neural defect. The deployment-prior oracle shows the
+performance possible when the changed prior is known.
 
-## What works
+**Hidden intervention:** a nuisance direction selected on an independent discovery
+split is removed without retraining. On untouched test pairs, it must reduce
+nuisance response, preserve signal response and approach an analytically constrained
+linear predictor's error. Random hidden directions, a nuisance-projected estimator
+and a network trained with independent nuisances test whether the internal
+intervention adds anything useful. Failure stops promotion of the correction.
 
-- `Spectrum` validates finite flux, positive uncertainties and an increasing wavelength grid.
-- `SpectralLikelihood` combines a callable spectrum model with explicit bounded uniform priors.
-- `NestedSampler` runs optional `dynesty`, preserving normalized posterior weights,
-  evidence uncertainty and reproducible RNG state. Its points are not equal-weight posterior draws.
-- `contaminate_transit` applies supplied spot/facula intensity spectra to a quiet-chord transit model.
-- Public-asset manifests verify SHA-256 hashes and constrain asset paths to the data root.
-- Fixed-spectrum hypothesis weighting, run logs and replay-manifest primitives are available.
+**Identifiability:** target and nuisance signatures range from orthogonal to exactly
+collinear. In the collinear case, spectral evidence cannot identify both amplitudes;
+the prior can still produce a finite posterior. The unregularized estimator must
+refuse this case rather than manufacture an estimate. These deliberately mixed
+directions are statistical stress tests, not validated contamination physics.
 
-## Python API
+All three comparisons are defined in the [protocol](docs/causal-reliability-protocol.md).
+Approximate neural intervals use validation residuals, never test residuals. The
+hidden intervention is coordinate-dependent and does not identify a unique circuit
+or guarantee concept erasure. No novelty claim is made for neural retrieval,
+sensitivity analysis or calibration; the protocol links the relevant prior work.
+
+## Analytic controls
 
 ```python
-from tierra_plus.models import Spectrum
-from tierra_plus.inference import NestedSampler, NestedSamplerConfig
-from tierra_plus.inference.spectral import SpectralLikelihood, UniformPrior
+from tierra_plus.diagnostics import gaussian_posterior, spectral_design
 
-observed = Spectrum([1.0, 1.1], [0.0100, 0.0102], [0.0001, 0.0001])
-bridge = SpectralLikelihood(
-    observed,
-    model=lambda theta: Spectrum([1.0, 1.1], [theta[0], theta[0]]),
-    priors=[UniformPrior("transit_depth", 0.005, 0.015)],
+design = spectral_design(
+    template=[0.020, 0.021, 0.019],
+    sigma=[0.0001, 0.0001, 0.0001],
+    overlap=0.0,
 )
-result = NestedSampler(
-    config=NestedSamplerConfig(seed=42), model_bridge=bridge,
-).run()
+mean, covariance = gaussian_posterior(design, observations=[0.2, -0.3, 0.1], rho=0.9)
 ```
 
-Use a scientifically justified forward model and likelihood for real spectra.
-Independent Gaussian errors and independent uniform priors are explicit assumptions
-of this bridge. Correlated noise, instrument response and atmospheric systematics
-are not handled implicitly.
+`observations` are centered, noise-whitened values. The prior has unit marginal
+variances and correlation `rho`; the conditional observation-noise covariance is the identity.
+`nuisance_projected_gls` provides the identifiable, prior-free reference, and
+`constrained_linear_estimator` provides the best linear readout at a declared
+nuisance-response cap. That frontier is not a universal bound on nonlinear models.
 
-## Scientific scope
+## Supporting spectral inference
 
-| Component | Status |
-| --- | --- |
-| Seeded nested sampling | Executable; real-dynesty Gaussian posterior/evidence test |
-| Spectral retrieval example | Synthetic linear feature with analytic comparison |
-| Published JWST spectrum | Conditional fixed-template comparison; negative absolute-fit check |
-| Stellar contamination | Algebraic intensity mixing; requires user-supplied stellar spectra |
-| Opacity selection | Fixed candidate spectra; no parameter-marginalized opacity comparison |
-| `tierra`, `petitRADTRANS` adapters | Interface contracts only; fail explicitly until integrated |
-| NEO characterization | Not implemented |
-| Full JWST retrieval replication, SBC, detection claims | Not established by this repository |
+The existing components remain available: validated `Spectrum` objects, bounded
+uniform-prior `SpectralLikelihood`, seeded `NestedSampler` with weighted posterior
+samples, top-hat tabulated-spectrum binning, supplied-intensity stellar mixing,
+and public-asset provenance. The Gaussian causal oracle is separate from the
+uniform-prior nested-sampling bridge.
 
-`uv run tierra-plus retrieve ...` exercises the unresolved backend interface and
-returns a configuration error; use the Python API/example for the implemented lane.
-The `inference` extra is required for actual sampling. Missing dependencies do not
-silently trigger surrogate physics.
+```bash
+uv run --extra inference python examples/synthetic_retrieval.py \
+  --seed 42 --output /tmp/tierra-demo.json
+```
+
+The [synthetic retrieval tutorial](docs/tutorials/index.md) checks inference against
+an analytic linear solution. Its [20-run repeated-noise check](examples/results/README.md)
+is a software check with fixed truth, not prior-predictive calibration.
+
+The [published WASP-39b PRISM check](examples/results/wasp39-prism/README.md)
+uses the original CC-BY-4.0 observations and authors' fixed PICASO model. On 127
+retained bins, the template plus a depth offset gives χ² = 247.891 for 126 degrees
+of freedom; the flat null gives 1751.400. Both leave excess residual scatter under
+the assumed independent errors. The template was selected using these data, so
+this is a conditional, in-sample check, not a fresh retrieval or molecular detection.
+
+The `tierra` and `petitRADTRANS` adapters remain deferred interface contracts and
+fail explicitly. `tierra-plus retrieve ...` does not run the causal experiment.
+NEO characterization is unimplemented and outside the active research direction.
+Promotion to physical retrieval claims has explicit [research gates](BACKLOG.md).
 
 ## Verify and read
 
@@ -101,20 +124,10 @@ LC_ALL=C LANG=C uv run sphinx-build -M html docs docs/_build -W
 uv run python scripts/bootstrap_public_data.py --verify-only
 ```
 
-See [theory and references](docs/theory/index.md), [tutorial](docs/tutorials/index.md),
-[API](docs/api/index.md), and [backend integration contract](docs/backend-integration.md).
-For scientific outputs, record input data hashes, priors, backend/opacity versions,
-sampler settings and calibration diagnostics. A passing software example alone
-does not establish calibration on real observations.
+See the [documentation](docs/index.md), [theory and references](docs/theory/index.md),
+[API](docs/api/index.md), and deferred [backend integration contract](docs/backend-integration.md).
+For scientific outputs, retain input and source hashes, configuration, model weights,
+split identities, raw predictions and failed checks. A passing software test does
+not establish reliability on real observations.
 
 Apache-2.0 licensed. See [LICENSE](LICENSE).
-
-### Current retrieval context
-
-[Barstow and Welbanks (2026), *Computational challenges in exoplanet atmospheric
-retrieval*](https://link.springer.com/article/10.1007/s41115-026-00031-9) reviews
-sensitivity to forward-model assumptions, priors, likelihoods and interpretation
-as JWST data improve. Tierra+ currently validates its inference plumbing with
-synthetic examples and a published-spectrum conditional check. Cross-code
-radiative-transfer comparisons, correlated-noise
-models and real-data interpretation require separate validation.

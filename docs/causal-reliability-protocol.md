@@ -41,7 +41,8 @@ The data split sizes are 8192 training, 1024 validation, 1024 discovery and 4096
 objects. Training seeds are 11, 23, 42, 71 and 101. Split generators are independently
 derived from the recorded data seed and run identity. Test distributions have
 correlations +0.9, 0 and -0.9; they reuse the same target, independent latent and
-noise within a run, making distribution comparisons paired. No test outputs select
+noise within a run, making distribution comparisons paired. Overlap comparisons
+also reuse these base draws for each training seed. No test outputs select
 models, intervention directions, thresholds or hyperparameters.
 
 ## Hypotheses and decisions
@@ -74,11 +75,17 @@ at least an 80% reduction in RMS nuisance response, IID RMSE within 10% of the
 optimal constrained **linear** predictor at a nuisance-response cap of 20% of the
 training-prior Bayes response, and retention of at least 80% of the unmodified
 model's signed signal response.
-Require all three conditions in at least four of five overlap-zero runs. Also
+Require the same IID fit-quality gate as H1, plus all three conditions in at least
+four of five overlap-zero runs. A failed fit or invalid response denominator is
+inconclusive, not evidence against the correction. Also
 compare against ten fixed random hidden directions, a nuisance-projected estimator
-and a network trained with independent nuisances. If a simple baseline matches or
-improves the error/sensitivity tradeoff, do not claim a special benefit from the
-hidden intervention. A failed H2 is a stop condition for promoting this correction. The comparison is
+and a network trained with independent nuisances. Descriptive dominance checks
+include ridge, GLS, the independent-nuisance network and every random removal:
+a comparator must have no greater IID RMSE or nuisance RMS and at least as much
+signed signal response. Passing H2 without empirical dominance only establishes
+nondominance on these measurements, not a special benefit. If a simple baseline
+matches or improves the tradeoff, do not claim a special benefit from the hidden
+intervention. A failed H2 is a stop condition for promoting this correction. The comparison is
 against a linear reference, not a proven bound for nonlinear predictors under a
 finite-endpoint intervention. The unmodified nuisance RMS and positive signed
 signal response must both exceed 1e-6; otherwise relative gates are inconclusive.
@@ -110,9 +117,13 @@ high-overlap cases. Those cases must remain in the report.
 - The frozen network after discovered-direction removal and ten seeded random
   equal-rank removals. Keep all random-control outcomes, not only the most flattering.
 
-Neural and ridge intervals use a single residual standard deviation estimated on
-their IID validation data, separately for each predictor after any direction is
-frozen. No uncertainty scale is fitted on test residuals. They are approximate
+Neural, ridge and constrained-linear intervals use a residual root mean square
+estimated on their IID validation data, separately for each predictor after any
+direction is frozen. This is the zero-mean Gaussian residual maximum-likelihood
+scale with a fixed point predictor, without correcting prediction bias; report
+validation bias separately. The independent-nuisance network calibrates on rho=0
+validation data, its own training prior; other learned predictors use rho=+0.9.
+No uncertainty scale is fitted on test residuals. They are approximate
 Gaussian predictive intervals,
 not learned full posteriors; calibration cannot be assumed. Report RMSE, signed bias,
 Gaussian NLL, 90% interval width, coverage and its Wilson interval separately. Exact
@@ -135,7 +146,7 @@ declared signal/nuisance geometry --> analytic Bayes + GLS controls
         |
 independent train / validation / discovery / test RNG streams
         |          |             |               |
-   fit weights   residual SD   choose direction   paired interventions
+   fit weights   residual RMS  choose direction   paired interventions
         +----------+-------------+---------------+
                                                   |
                                        frozen metrics and decisions

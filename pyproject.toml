@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "tierra-plus"
 version = "0.1.0"
-description = "Inference infrastructure for exoplanet atmospheric retrieval and NEO characterization."
+description = "Causal reliability experiments and analytic controls for spectral inverse models."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
@@ -15,10 +15,10 @@ authors = [
 keywords = [
   "astronomy",
   "bayesian-inference",
-  "exoplanets",
-  "jwst",
-  "neo",
-  "retrieval",
+  "inverse-problems",
+  "spectral-inference",
+  "interpretability",
+  "prior-shift",
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -68,6 +68,7 @@ select = ["B", "E", "F", "I", "UP"]
 [tool.pytest.ini_options]
 addopts = "--cov=tierra_plus --cov-report=term-missing --strict-markers"
 testpaths = ["tests"]
+pythonpath = ["."]
 
 [tool.mypy]
 python_version = "3.11"

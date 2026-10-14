@@ -4,8 +4,7 @@ message: "If you use Tierra+ in scientific work, please cite the software and de
 type: software
 authors:
   - name: "Vectigen"
-repository-code: "https://github.com/salma2vec/tierra-plus"
+repository-code: "https://github.com/Vectigen/tierra-plus"
 license: "Apache-2.0"
 version: "0.1.0"
 date-released: "2026-04-17"
-
