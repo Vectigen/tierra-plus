@@ -4,7 +4,9 @@ The separate [finite-grid reliability audit record](reliability-audit/README.md)
 contains the operational four-case demonstration and its negative full-panel result.
 The [Sonora preparation record](sonora-photometry-preparation/README.md) separately
 freezes a verified CC-BY-4.0 ingestion and prospective cloud-omission partition;
-it contains no inference outcome.
+the subsequent [one-run evaluation](sonora-photometry-evaluation/README.md) qualified
+on the cloud-free validation split and failed both acceptance and accepted-coverage
+gates on the paired cloudy challenge.
 
 These are measurements from 20 completed local runs of `examples/coverage_check.py`
 with noise seeds 1000 through 1019 and 90% weighted equal-tail posterior intervals.
