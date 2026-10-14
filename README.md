@@ -2,11 +2,11 @@
 
 **Causal reliability of spectral inverse models.**
 
-Tierra+ tests when a predictor's useful training correlation becomes misleading
-after deployment. Its first experiment asks whether a model can estimate a spectral
-feature accurately on ordinary test data while changing that estimate when only a
-nuisance changes. A second test asks whether removing a discovered hidden direction
-improves the resulting error/sensitivity tradeoff.
+Tierra+ tests when spectral estimates become confident and wrong after the data
+or physical model changes. Its experiments use paired nuisance interventions,
+held-out atmospheric states, and exact reference calculations to distinguish
+useful corrections from reassuring diagnostics. Both successful controls and
+failed hypotheses are retained.
 
 The experiment uses **synthetic observations and known synthetic labels**, with its
 grid, error scale and target shape anchored to hashed public WASP-39b PRISM assets.
@@ -14,7 +14,7 @@ The target is a template amplitude, not a molecular abundance. This controlled
 problem makes paired interventions and exact reference solutions available; it
 does not establish a failure in a deployed atmospheric retrieval.
 
-Read the [frozen protocol](docs/causal-reliability-protocol.md),
+For the first controlled study, read the [frozen protocol](docs/causal-reliability-protocol.md),
 [experiment configuration](examples/configs/causal-reliability-v1.json), and
 [experiment records](examples/results/causal-reliability/README.md).
 The protocol fixes the hypotheses, controls, splits and decision rules before the
@@ -27,6 +27,21 @@ correction passed zero of five runs and was dominated by the known-geometry GLS
 control. Exact training-prior Bayes also failed under the changed prior, while the
 network's intervention effects exceeded the predeclared oracle-explanation
 tolerance. Read the [results and retained negative findings](examples/results/causal-reliability/README.md).
+
+**Physical-grid result:** a separately trained nuisance-augmented network passed
+the predefined gate in 4/5 seeds on held-out PICASO equilibrium atmospheres,
+improving on matched ridge. A training-support physical-grid reference was still
+more accurate. On 116 external photochemical atmospheres, the neural estimator's
+nominal 90% coverage fell to 66.5% despite accepting every spectrum; the grid
+reference also became overconfident. Its often zero-width intervals describe
+discrete metallicity labels, not continuous atmospheric precision.
+
+Read the [physical protocol](docs/physical-grid-protocol.md) and
+[complete results, width/abstention tradeoffs and reproduction commands](examples/results/physical-grid/README.md).
+The research question now has a concrete boundary: can predictive checks on
+wavelengths withheld from fitting expose these confident mistakes, while retaining
+a useful fraction of spectra? The exposed photochemical states are diagnosis data;
+a new method requires fresh held-out physics.
 
 ## Reproduce the causal experiment
 
@@ -143,4 +158,6 @@ Use the locked development environment for patched tooling dependencies. Tagged
 releases build without publishing credentials, then pass the built distributions
 to a separate publishing job.
 
-Apache-2.0 licensed. See [LICENSE](LICENSE).
+Code is Apache-2.0 licensed; see [LICENSE](LICENSE). Published spectral assets
+retain their separate attribution and CC-BY-4.0 terms, including the
+[prepared physical grids](examples/data/physical-grid/README.md).

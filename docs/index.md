@@ -1,8 +1,8 @@
 # Tierra+ documentation
 
 Tierra+ studies the causal reliability of spectral inverse models: when a predictor
-uses a training correlation that becomes misleading after deployment, and whether
-a targeted hidden intervention improves that error/sensitivity tradeoff.
+becomes confidently wrong after a nuisance or physical-model change, and which
+corrections survive explicit controls and held-out physical states.
 
 Start with the [frozen experiment protocol](causal-reliability-protocol.md). The first
 experiment generates synthetic observations and labels on a public spectral grid,
@@ -11,11 +11,19 @@ separate ordinary prior dependence from approximation error; deliberately collin
 signatures expose cases where the data cannot identify the target. The experiment
 does not establish a molecular detection or a failure of a physical retrieval.
 
+The [physical-grid protocol](physical-grid-protocol.md) separately trains a
+metallicity estimator on published PICASO atmospheres. It compares nuisance
+augmentation with matched ridge and exact finite-grid references, then challenges
+all methods with photochemical spectra. Its bounded augmentation benefit does not
+survive that change in physics; discrete-label uncertainty cannot be interpreted
+as continuous atmospheric precision.
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
 
 causal-reliability-protocol
+physical-grid-protocol
 theory/index
 tutorials/index
 api/index

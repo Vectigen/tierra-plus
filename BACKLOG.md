@@ -15,6 +15,14 @@ existing protocol after inspecting its test set.
 
 ## 1. Move from controlled geometry to a physical simulation grid
 
+**Bounded execution completed, broad promotion remains open.** The
+[physical-grid study](examples/results/physical-grid/README.md) separately trained
+on 128 published equilibrium states and held out 32 calibration and 32 test
+states. Its augmentation gate passed 4/5 seeds; exact training-support grid
+inference was more accurate. Both failed uncertainty coverage on 116 external
+photochemical states. The instrument/dilution interventions remain explicitly
+approximate, and discrete-grid intervals are not a continuous retrieval posterior.
+
 Use a licensed, versioned atmosphere grid with hashed assets and independently
 varying target and nuisance parameters. Declare the physical intervention, bin
 response and observation-noise assumptions before fitting. Hold out physical
@@ -36,6 +44,12 @@ training distribution accounts for the effect before attributing it to a hidden
 mechanism. Claim only what the independently evaluated model and data support.
 
 ## 3. Extend uncertainty beyond one validation residual scale
+
+Finite-grid posterior intervals, a nuisance envelope, validation-only worst-group
+calibration and width-based abstention are now tested. Their external failures
+leave this promotion gate open. The next diagnostic must predict errors on fresh
+physical states better than a simple residual baseline; the exposed 116-state
+challenge cannot become its untouched test set.
 
 Add posterior or conditional uncertainty estimates only with explicit assumptions
 and held-out calibration tests. Separate prior-predictive computational calibration

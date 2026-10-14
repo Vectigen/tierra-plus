@@ -1,0 +1,87 @@
+{
+  "status": "started",
+  "smoke": false,
+  "source_commit": "bb3d37b4c76e9fd4b43fd92f55df875728534046",
+  "config_sha256": "7a9a4b535fc39b6f8448b88ed6d17efe33903bb431f9983a253798d44f3fd9fb",
+  "config": {
+    "protocol": "physical-grid-v1",
+    "seeds": [
+      203,
+      307,
+      401,
+      503,
+      601
+    ],
+    "data_seed": 681193,
+    "training_repeats_per_state": 64,
+    "validation_repeats_per_state": 32,
+    "test_repeats_per_state": 32,
+    "hidden_width": 32,
+    "training_steps": 800,
+    "batch_size": 256,
+    "learning_rate": 0.003,
+    "ridge_penalty": 1.0,
+    "nuisance_dilutions": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "width_cap_dex": 0.6,
+    "coverage_floor": 0.85,
+    "acceptance_floor": 0.7,
+    "required_seed_passes": 4,
+    "neural_rmse_ratio_to_augmented_ridge": 0.9,
+    "neural_nuisance_response_ratio": 0.75,
+    "neural_clean_rmse_ratio": 1.1,
+    "neural_clean_rmse_slack_dex": 0.02,
+    "primary_conditions": [
+      {
+        "name": "clean",
+        "shift_index": 1,
+        "dilution": 0.0
+      },
+      {
+        "name": "gray",
+        "shift_index": 1,
+        "dilution": 0.1
+      },
+      {
+        "name": "shift_minus",
+        "shift_index": 0,
+        "dilution": 0.0
+      },
+      {
+        "name": "shift_plus",
+        "shift_index": 2,
+        "dilution": 0.0
+      },
+      {
+        "name": "combined_minus",
+        "shift_index": 0,
+        "dilution": 0.1
+      },
+      {
+        "name": "combined_plus",
+        "shift_index": 2,
+        "dilution": 0.1
+      }
+    ],
+    "secondary_condition": {
+      "name": "off_grid",
+      "shift_index": 3,
+      "dilution": 0.025
+    }
+  },
+  "started_utc": "2026-10-14T15:26:14.796821+00:00",
+  "input_manifest_sha256": {
+    "rcte": "dc3937c87dd20d60fb59b0ef1142551a31716a25bbe770e1dd1b6b91ac04d2d7",
+    "photochemical": "f2610ef4318eacd05defd2065799b5d66531e33a247fa9cbdc6ef310fe49c7f2"
+  },
+  "control_roles": {
+    "grid_nominal": "full-grid oracle; includes test states",
+    "grid_marginal": "full-grid oracle; includes test states",
+    "grid_envelope": "full-grid oracle; includes test states",
+    "grid_nominal_checked": "full-grid oracle; includes test states",
+    "training_grid_marginal": "training-state support only"
+  }
+}

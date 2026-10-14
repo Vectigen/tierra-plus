@@ -77,12 +77,12 @@ it is not used for fitting, interval calibration, or selection of gates.
 ## Estimators, calibration and reference
 
 - A 32-hidden-unit tanh regressor trained only on clean spectra, using the
-  existing fixed-budget NumPy implementation: 800 Adam updates, batch256,
-  learning rate.003. No early stopping, search or checkpoint selection.
+  existing fixed-budget NumPy implementation: 800 Adam updates, batch 256,
+  learning rate 0.003. No early stopping, search or checkpoint selection.
 - The same network trained with independent uniform draws from the nine
   nuisance combinations. Its physical states, noise draws and fit seed match
   the clean network. Training has 64 noise draws per physical state.
-- Matched ordinary/augmented ridge, training-only standardization, penalty1.
+- Matched ordinary/augmented ridge, training-only standardization, penalty 1.
 - Clean networks/ridge use clean-calibration absolute-error intervals. Their
   separate worst-group controls use the largest validation radius across all
   nine nuisance groups. Augmented network/ridge use the same worst-group rule.
@@ -91,24 +91,24 @@ it is not used for fitting, interval calibration, or selection of gates.
   calibration rule, **not a coverage guarantee under physical-state shift**;
   [conformal coverage assumptions](https://arxiv.org/abs/2107.07511) do not
   automatically hold here.
-- Exact finite-grid reference: enumerate all192 physical states × nine nuisance
+- Exact finite-grid reference: enumerate all 192 physical states × nine nuisance
   states, with uniform prior mass over each state. Integrate a constant-depth
   offset under a common flat prior; its factor cancels in posterior ratios.
-  Sum the Gaussian likelihood and report the posterior mean and central90%
+  Sum the Gaussian likelihood and report the posterior mean and central 90%
   metallicity interval. This is exact enumeration of a finite model, not a
   continuous parameter posterior. **The full-grid physics oracle includes the
   generating test states**, unlike the learned estimators.
-- Repeat the same reference using only the128 training states to expose the
+- Repeat the same reference using only the 128 training states to expose the
   oracle-support advantage. A nominal full-grid reference ignores nuisance.
 - The nuisance envelope takes the minimum lower and maximum upper bound of
-  the nine nuisance-conditional central90% intervals. Its point estimate is
+  the nine nuisance-conditional central 90% intervals. Its point estimate is
   the marginal reference mean. It is conservative within this finite family
   but has no general frequentist guarantee.
 - A residual-check control rejects the nominal reference when its minimum
-  chi-square exceeds the95th percentile of clean validation values. This
+  chi-square exceeds the 95th percentile of clean validation values. This
   separates detection from correction.
 
-All methods use the same abstention threshold: interval width at most **.6dex**.
+All methods use the same abstention threshold: interval width at most **0.6 dex**.
 The residual-check control additionally requires its residual check to pass.
 Report unconditional coverage/error, interval width, acceptance, and coverage/error
 among accepted spectra; an empty accepted set has null coverage and fails.
@@ -121,10 +121,10 @@ comparison on explicit physical spectra.
 
 ## Frozen gates
 
-Main seeds:203,307,401,503,601;32 noise draws per test state and condition.
+Main seeds: 203, 307, 401, 503, 601; 32 noise draws per test state and condition.
 All values are fixed in `examples/configs/physical-grid-v1.json` before main.
 
-The augmented-network claim requires **all** of the following in at least4/5 seeds:
+The augmented-network claim requires **all** of the following in at least 4/5 seeds:
 
 1. In **each** primary condition, unconditional coverage≥.85, acceptance≥.70,
    and accepted coverage≥.85, under the .6dex width cap.
@@ -132,8 +132,8 @@ The augmented-network claim requires **all** of the following in at least4/5 see
 3. Mean paired nuisance-response RMS≤.75 times ordinary-network response.
 4. Clean RMSE≤1.10 times ordinary-network clean RMSE + .02dex.
 
-Each classical method separately passes reliability only if criterion1 holds in
-every primary condition, in at least4/5 seeds. A classical reliability pass is
+Each classical method separately passes reliability only if criterion 1 holds in
+every primary condition, in at least 4/5 seeds. A classical reliability pass is
 not a neural-method pass, superiority claim, or proof of continuous-atmosphere
 coverage. All failed components and seeds are retained. Secondary/off-grid or
 external failure limits the scope even if primary gates pass.
@@ -141,7 +141,7 @@ external failure limits the scope even if primary gates pass.
 ## External mechanism challenge and limits
 
 After the method/config/source are frozen, prepare the separate author
-`photochem_cloud_free.zip`:18,730,827 bytes,
+`photochem_cloud_free.zip`: 18,730,827 bytes,
 MD5 `74ec83af55eeca6127629f16f01c1409`, same record/license.
 These PICASO spectra include VULCAN photochemistry; cite
 [Tsai et al. 2021](https://arxiv.org/abs/2108.01790).

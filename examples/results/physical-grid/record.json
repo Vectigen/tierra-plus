@@ -1,0 +1,26 @@
+{
+  "source_commit": "bb3d37b4c76e9fd4b43fd92f55df875728534046",
+  "report_sha256": "0dab43919ce7a33791c86a0743b143fdfbb966d30b067e17ffdedf83474e754a",
+  "report_uncompressed_bytes": 12622477,
+  "compressed_report_sha256": "ff3e62acf32bd3a388d43abe27095d00557454648c3f8003cf031d55ce0b060c",
+  "raw_draws": "Regenerate exactly with the public replay script; original SHA256 values are in each run artifact_sha256. Original raw draws retained unchanged in the research archive.",
+  "audit": {
+    "checks": 118180,
+    "max_prediction_replay_absolute_error": 0.0,
+    "source_commit": "bb3d37b4c76e9fd4b43fd92f55df875728534046",
+    "seeds": 5,
+    "result": "passed"
+  },
+  "public_replay": {
+    "checks": 235955,
+    "max_prediction_replay_absolute_error": 0.0,
+    "regenerated_draw_archives": 5,
+    "gates_recomputed": true,
+    "result": "passed",
+    "runtime": {
+      "python": "3.11.15",
+      "numpy": "2.4.4",
+      "zlib": "1.2.12"
+    }
+  }
+}

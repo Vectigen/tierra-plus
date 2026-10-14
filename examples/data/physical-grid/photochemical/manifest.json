@@ -1,0 +1,2115 @@
+{
+  "family": "photochemical",
+  "source_doi": "10.5281/zenodo.7236759",
+  "license": "CC-BY-4.0",
+  "authors": "Mukherjee, Moran, Ohno, Batalha, Fortney (2022)",
+  "archive": "photochem_cloud_free.zip",
+  "archive_bytes": 18730827,
+  "archive_md5": "74ec83af55eeca6127629f16f01c1409",
+  "archive_sha256": "f09fa3cb9d5c5bb589a18874ff869eb3b6b3d51fec3ab4b1b771e9ed9b41f213",
+  "prism_sha256": "02fa509fc8cd81eaa8451a378a72cb3df7488cfcf5ea83c3b74c978f978d884c",
+  "states": [
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "c50d5d56a65d38a2595157afe95ce54948d1e88d2927f01c5fedd2ee2e5d5b21",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "d2f18a2432766206eb03dfcd786f4394e5d22a85076eaacc26e4db19951b67ea",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "57706fb2e25b5945b3d7a40ce5950a74d3bd8a6a8f351188b43c375cda658137",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "61ff71ee32f88de8701f635845195845cc5c427be47e089771848e28748483e2",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "7c452ad88e106211964e60d07f6116deaf5f60b899542efd62bb1076eb831e02",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "e56a52183114c643ad41cfb92dfc699372d14a6997dee164cbfdddb8a57c1ac2",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "1ec78f9ef1dba4abaaecbe4aa1e53e56f71f80f5077e7193da4b984f2b48dc06",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "2bc93b0ea5e068ebdcd0d33d319a8aea7b41f4904050463d4c72a74f44078246",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "eeaa7a9c7ee14ef6e8d94a4af22cc2a884687b48b1b013b34735d869443af5ec",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "1c6136a76c5ac320cefacc81dd2be3a351536530047f799dbe6d2f1f70d2f6e5",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "d4bd0e4a729b9fc9a8a681a6407f24450b1a8e27e6dcba04d5cfbaddac4292c5",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "8a51b8c0d4199e252755e704e19b7d17a4e6e333640b9b7ff0fa116070d2957c",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "02e83ea2d28a080b43d61c1ba3f5e107890135ab424dea206b1ed4922c3b5b35",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "9d4ddeedb431a6de8068d83bc87cbd7b5e349a2684754086aa246678c1d0c740",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "416c9ffce88fbfc84057345f612b8537f181e233dfc44fcb37aa90125b11107c",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "7fad3d6c91d4bf9a54102d10c8459390b9da5a82b7333185950fe3e8cda868ac",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "390bdfc0d30cb6b92b60756b6a69cb82f5b9030214872ae40df217fa85be5604",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "6310e8c58c226f7df2253cb7f024d1892056837a10101934ba0b4e3574a76501",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "d34084c3cd77a4fc0f7655abd7a8bbcd63f7627414ce35dbe6e2cd47437b4d4f",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "400ebdfafbc2cdd0247cd518a8e6328ba1ffe3f1792619083fecd24b5e95c6d5",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "dd4b5d314689d3c7ba5148101e5ebdc3a6743875004682ad7603c3717a5cc9a5",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "3821f309aced92c8705a4ab6b9bbae51aa645e6bea02b475a400e3b53d43ab94",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "269acc013eb3f0b43a5eed5ebb6770d651ea97c60193237d15c7c93b67ee10f5",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "351a3976452a0c09cca93b23a18366fc5ce12596bb5f3e0a91d0d10a23164667",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.7_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "b54be372713aebe522586005b8147630ba5b5db215a876f16bcb96256d930143",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.7_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "37964f5fbbf5e7231f2a97fb0ef438d77dae724127da18a8f4c1872448143ff8",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.7_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "4851edfa3f592002f62e314ef47406d66ec0b34518d171e4382686d34810bd52",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.7_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "1794aee0ca23c75e259c23d489e9b174645484fb929e2bf4b7e735e248134a8e",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+1.7_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "88908174d422ea18690e395d6bd32a6e39da723dcc21c386c5d12881e87dd91c",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "913afa3704e548d7071ece1bb5263248038ea308c33fb84bc4575ac4532e4794",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "27a03f4f4dc29fc59a4aa2332a52bed1bcacb4bc7bde04fdfc87a2e763591393",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "4e108ac61b1b20d6a2d7079a0dd4fea5141ba93d9a04565b1b39493285456466",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "656c98de4fab160af0dc4a85d09aab41264ed1986c163f80420ceeebbf91450c",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "38517b90ab39fc8f5be9c3666dfc61eb00fe34dc6577ac5622adb9eab2efc790",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "b871dfc3f987ca62a7f95c239a7770e121a497217b7c41ef3967dc392d54854a",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "648d5ced4d7dd94efacead07df416fc19eec61906516a1ce7a7cede4c4b332df",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "bf9652d4e666253e5f8aa2a9c2715a126e9291aa30490e4dc81ff3c3d4fdefbd",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "9753dbb5145c562c80f3699dbdd5af27f47525bc9f85230a2e86710af53d132f",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "a7b7fa02695b3a94b19e5a0c61080af4f255dfb5f31c9a57591e4abf13c26bc4",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "f4bf8ece3887f16da703eda5b9cf6d4c3e78d5e8e61f3e91a4c699339a1cb9ef",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_100_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "5c1667ae7daba89f2ecf0b728fe4ca4fc64980c6290c0101577e4579072148d9",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 100.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "2a6ef2b72c550ae18508da53918f290d5f60284c93e4bc66ca18ad23356377fd",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "49f80de043cf218b57af512de77765619c14d16ee5552f0c36a4536d5cfee41e",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "3df9fa93fea7edace82664910c525c6bbe8da1e71c1f1c4363f5313e704c76bb",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "46208cbbb17c89c45160490c2ea6fd4c0fe9f6b76a25dc2923f6d2461a4eed6a",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "d9cadc847d55d13b658c903223fbce14d796c86aa88b1303b6493c57309d1ed0",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "6aaf880a3435e05d81d7e8077078bcb73e78f429df99bdff37187572a5237e04",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "63a10135ef534a3c08537b8979dfcd9871c1f6a1949867468d869574d238f772",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "022f0994e566888274f4d9bca33b4f49235c21aa4be0574f20f2379b505095a7",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "c9e44c98f3151e0e6f8ef4fbcebf8b6a2c9c3176492e400aa78d7b72aa2b6409",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "70824fc8638df4c2045f56929d1a7a618fce49e7c6b3b3ee32e244004393553e",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "12551ef01bf38d29c08cac23c904dc46cf4b210ed303eb42f2aff769e25f0438",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "6ae53b07b59fcd6bf0651ecbf35ce1fa84f7bfbbdc90a369104a3ab960efa848",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "d39f10e2dcb6cf3b4026d7406530ba6322d739dbec51d23544866566b15d8202",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "8d06246f59026a39c37fdd356b01acf6c471a0167e8a1881b417e8a0b77a0386",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "94aec4c57e691587ec1f73de6c6f10164dbf59853bfcc6e5dc94b2f2b52e6860",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "3746e20bd963621d02dbf34c51fa49c8a2c7ab1436ba458a75f8bdfb84d084b8",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "633d88b3f06c5636ba6a494e81237bad02fad496499c59a463187cd9be71c4d4",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "9e396c9d1e9b812ec78b0edb7f7ff640c99e7d26ac6f8a0ff721f8c7ba4fa09b",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "8ed26ab2a77cc1f142bde13be218c975a1c8854d7def3548163ee93958a44ab5",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "3f3e24708a48aff99c386294ca42b50a0d90de356292c64c6188dee3fd94611f",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "1eed831896800d52e9ea6c7fe73282a38e63189e3e0513e65519724ee64a9388",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "46b5001685a3b346826c21863a14a90618771d040185d43460d6bca3244decdd",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "a1bddd42c0b7efc64829bafab4364b2caf94e20f58fb7c51ac119d7c1e4b7fce",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "b8fb9d59df02d1fef0a656c1db4c218d252c7f0de9b5f4657482930b087f5673",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+1.7_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "5d34f02e7a01cc2b6959579ccd5c7f2a492e330dd7f68a1ee38bab9bb0e839a3",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "7226e15f4aea333299c76dedccafefec7d4c7c5e79b71842c7fc77ecedffc093",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "244db4702df8f5eaea7cf8e2497881749db4c4c3acad383a17009cb76a6b79ea",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "abdf63ac8c895cef47f84f48660fb125eaa51ebada9d5b2e3c565dda5ac0ae33",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "e7b6411527b626e223d9d437495ed11429b378501d48cb57347d5b2bf031303d",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "cc8ff689ac622b9d0e2392205e48196f2f11daf673fcb4dd44ff1ebbcf3fae69",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "5b39d058499bae9afdaa03e0aef225025de65366d985036e01544dc71bb3df35",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "dd504127fdd21f99ccd21d713d4a062d0a62856950c4b17e75202532a1fa825d",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "48d830f69510a238f179f52e9b282c8cf8701c1d5d31e5179cedcfb190816308",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "aad890e950bd284714df0345eba389dca028e41f5cdec9b2156383c804c0370e",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "cc8d3f5caf2a5bef0128b4015d7b420d4e52e6e487a5ddfeeb94d61feb0c6a4c",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "7650dba220a18a00daccd1913e943f80009ea809a535fb50da0d2c6e91b26114",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_200_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "0a22a0a0adee296908893828af5a29254f32c6f08b47b0800f1f80f6cbeb71fc",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 200.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "70075f9c7ccc469c3e09ead1e73be6e1bd801bfce830e632e8655f9bb9646da6",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "3f2ea82716709e41caa6358c793d0470d3d80f31520e15a8e3251fcdb0bf4417",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "430ac1ca04f817e69d258bc4c5115c094efa0cf8588916b015e124f0b106374e",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "e105c7e097df0f2ea5475f64a3c4f6e6aca90c9c531642da81f6d332c3f13aed",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "52052962a2af4744c595803a6c67a51ff5366cd7e89bdf4fd01bd18b7e7f50fb",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "316d7179fa6b2e049320737011a56da418d3115ea1687e0ef91bf4663d28ba7f",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "f96ba04f4ac3e610c354e4f6acc83d1e79e6c606ae4d330a390692d625e2b5bb",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "c0e80e5631c68a861ae2bfec0a38190647171b83b9d9b6ab56d9a6ef1372c38a",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "528baec768beffb9d37d7b416b811461f2a409a96dcee6f97a6ac249a455fa70",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "0528467ef2cd3aa3d07b360a1254f3048a2106137e4d9e38e85356c0565459c6",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "87254b8efff2911173b67873f61aba1083a9231903ba7f25592e707b1dc6f5d7",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+0.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "f9fa5b07a120fddf0618e8c136f69261b8280df0a4ade4cf26a80e3bf56222a1",
+      "log_metallicity": 0.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "14eb36d9640c9f4446256f3f0baa483d06f3128f5f5eee74e6568ec6bae22d0d",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "4852f6ece70aa84f9e6450809d5d06bbec6f6b7135f66dd0260908287364ac99",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "3078dad1625b9b37b0e983cc83dd02d74c0b17981bfe0fb3fe7fb286e2adaf30",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "bec134a1aef52c000ff6d38f94fc074215a16a7b91683b7643e0a50da545968b",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "ad37de8b5eea41835f228ca10fca982184c4de31cb99005aad6654e74fb57db8",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "30b1439d27ec0e1df84beec3626c59d53ae2b57f58b9579a5e5ca270a7366716",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "9ad3c7be6bb1ed261b7b2d4a9620df311e01732ca5391e2050c37f2524bd711d",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "9b1c61e0a6d693c553bcd0971ad3a2400a2d26ee953c4ee888eb91360ac80fec",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "2db585a2ed01634372e99b70fd96b66455087d31e008be6a663b61fd3f9f0acd",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "e4b09e2a88d3077c0fc485d409aa3cb63bc408006744cbc3078506f50db0d297",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "b59d80bd4b888fb049c011000e1cf3f8c984fb54dd4d3861a88e9b21f100850f",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "df53fadb8305c3bfea7a480dc58c507343d39dd46348034edcb80c4eec14916c",
+      "log_metallicity": 1.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.7_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "844a8b98d3629d74311a7132904f78cca1411b2c95b2bd52719c2d15a74d56f4",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+1.7_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "ff4daf23b8c5ef2ed7b6102e788b8d2fa5dc4a019a2de6baa6fdbb1397d1ed6e",
+      "log_metallicity": 1.7,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "c272761b762b22d055ff17974910c17d2482e3c16e855a7478c1e48eb2aeb500",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "3077b435366d98754690cf023b3861f0b13c02fc5fbb3681c946fd416a7674c7",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "fe8f5fedf53cc4888e65c5c61edb5133f932d517423c7f079b0da19580a5392a",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_0.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "da6a9c28bd465557704e642660d78feb9f22b891589c1312c9fed9b81f9dc367",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.229,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "ff8b509db663de62b816001b251c6e2b6e90ef8a56f84e9b0bcc65225afe15a0",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "9c2b82bc3901efc3fc69756262ec246dec2d7dc75ba3db98fc61d1a19ada65e9",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "52687c0d7eed89e3eae2d45cee4b9ff676b3371f869d3a7ade08b206215e2222",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.0_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "858db44529d2f64d780ed75a9299e7b073ac14fc4492d6bfaaf89b98467e43f2",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.458,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e11.nc",
+      "sha256": "50cd19ebe28383647bef0fc867d5c96299ae6512ef2f2e5698672e5aef651860",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 11.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e5.nc",
+      "sha256": "99906a67df8514dd4afd6ff739dfd9a10dd3c4b526caeca4f51962f66169c594",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 5.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e7.nc",
+      "sha256": "a65c912d9af449084130f0517309f35217b241a79f2ba2afb8175c1951a8d36f",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 7.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    },
+    {
+      "id": "photochem_cloud_free/profile_diseq_planet_300_grav_4.5_mh_+2.0_CO_1.5_sm_0.0486_v_0.5_kzz_1e9.nc",
+      "sha256": "0be2de729e24ce13956ba8872c00a454b9f7a2034b6e83b7126aed6d7ae9b400",
+      "log_metallicity": 2.0,
+      "carbon_to_oxygen": 0.687,
+      "tint": 300.0,
+      "heat_redistribution": 0.5,
+      "logkzz": {
+        "value": 9.0,
+        "unit": "cm2 / s"
+      },
+      "code": {
+        "spectrum": "PICASO",
+        "chemistry": "VULCAN",
+        "climate": "PICASO"
+      }
+    }
+  ],
+  "splits": {
+    "external": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  "shift_bound_um": 0.011857996250000058,
+  "shifts_um": [
+    -0.011857996250000058,
+    0.0,
+    0.011857996250000058,
+    0.005928998125000029
+  ],
+  "response": "midpoint top-hat bins, lower edge >= 2.3 um; no LSF/covariance",
+  "quantity": "dimensionless transit depth; metallicity label log10(relative to solar)",
+  "grid_sha256": "18b8a61bed2291e418a13d0663284daa7ab1dfa2a22bea01569b38d6bd6aeb12"
+}
