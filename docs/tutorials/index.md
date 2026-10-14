@@ -25,11 +25,22 @@ and seed reproduces the input and sampler sequence; cross-version bitwise identi
 is not promised.
 
 The tests additionally compare a one-dimensional Gaussian posterior and known
-evidence with a real dynesty run. No real-observation or atmospheric-backend
-replication is included yet.
+evidence with a real dynesty run. Atmospheric-backend replication is not included.
 
 The source checkout also includes `examples/coverage_check.py` and complete repeated-noise
 records under `examples/results/`. In 20 runs, nominal 90% intervals covered the
 fixed baseline depth in 18 runs and feature amplitude in 16. The recorded Wilson
 intervals are wide; the second parameter under-covers in this small experiment.
 This is fixed-truth software validation, not prior-predictive SBC.
+
+## Published-spectrum check
+
+`examples/wasp39_validation.py` fits the original authors' tabulated PICASO model
+and a flat-depth control to a fixed subset of the published WASP-39b PRISM spectrum.
+It verifies data hashes, integrates the high-resolution model over explicit
+approximate bins, preserves the weighted posterior, and compares one-parameter
+inference to an analytic Gaussian calculation. The fixed template was selected on
+these observations, so the conditional comparison is not independent atmospheric
+validation. Both models fail the absolute residual check under the implemented
+likelihood; see the repository's `examples/results/wasp39-prism/README.md` for all
+measurements, assumptions and reproduction commands.

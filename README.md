@@ -5,7 +5,8 @@
 Tierra+ connects validated spectra and explicit priors to a seeded nested sampler,
 with weighted posterior output, evidence estimates, provenance hashes, and a simple
 stellar-contamination operator. It includes a runnable synthetic retrieval and
-analytic checks. Atmospheric radiative-transfer adapters and NEO inference remain
+analytic checks, plus a conditional comparison on published JWST data. Atmospheric
+radiative-transfer adapters and NEO inference remain
 unfinished; this is research software, not a validated mission pipeline.
 
 ## Reproduce the working example
@@ -29,6 +30,14 @@ A [20-run repeated-noise check](examples/results/README.md) retains all raw fits
 Nominal 90% intervals covered the fixed truth in 18/20 baseline-depth runs and
 16/20 feature-amplitude runs; the reported uncertainty is wide. This is a synthetic
 software check, not prior-predictive calibration or validation on atmospheres.
+
+The [published WASP-39b PRISM check](examples/results/wasp39-prism/README.md)
+uses original CC-BY-4.0 data and the authors' fixed PICASO model, with verified file
+hashes, explicit wavelength selection and bin integration. On 127 retained bins,
+the template plus a depth offset gives χ² = 247.891 for 126 degrees of freedom;
+the flat null gives 1751.400. **Both leave excess residual scatter** under the
+assumed independent errors. This is conditional inference on an existing model,
+not a fresh atmospheric retrieval or molecular detection.
 
 ## What works
 
@@ -69,11 +78,12 @@ are not handled implicitly.
 | --- | --- |
 | Seeded nested sampling | Executable; real-dynesty Gaussian posterior/evidence test |
 | Spectral retrieval example | Synthetic linear feature with analytic comparison |
+| Published JWST spectrum | Conditional fixed-template comparison; negative absolute-fit check |
 | Stellar contamination | Algebraic intensity mixing; requires user-supplied stellar spectra |
 | Opacity selection | Fixed candidate spectra; no parameter-marginalized opacity comparison |
 | `tierra`, `petitRADTRANS` adapters | Interface contracts only; fail explicitly until integrated |
 | NEO characterization | Not implemented |
-| JWST replication, SBC, detection claims | Not established by this repository |
+| Full JWST retrieval replication, SBC, detection claims | Not established by this repository |
 
 `uv run tierra-plus retrieve ...` exercises the unresolved backend interface and
 returns a configuration error; use the Python API/example for the implemented lane.
@@ -105,5 +115,6 @@ Apache-2.0 licensed. See [LICENSE](LICENSE).
 retrieval*](https://link.springer.com/article/10.1007/s41115-026-00031-9) reviews
 sensitivity to forward-model assumptions, priors, likelihoods and interpretation
 as JWST data improve. Tierra+ currently validates its inference plumbing with
-synthetic examples. Cross-code radiative-transfer comparisons, correlated-noise
+synthetic examples and a published-spectrum conditional check. Cross-code
+radiative-transfer comparisons, correlated-noise
 models and real-data interpretation require separate validation.

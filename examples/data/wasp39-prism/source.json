@@ -1,0 +1,27 @@
+{
+  "doi": "10.5281/zenodo.7388032",
+  "title": "Products and Models for \"Early Release Science of the Exoplanet WASP-39b with JWST NIRSpec PRISM\"",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "publication_date": "2022-12-01",
+  "creators": [
+    "Zafar Rustamkulov",
+    "David K. Sing",
+    "Sagnick Mukherjee",
+    "Erin May",
+    "James Kirk",
+    "Everett Schlawin",
+    "Michael R. Line",
+    "Caroline Piaulet",
+    "Aarynn Carter",
+    "Natasha E. Batalha",
+    "Jayesh Goyal"
+  ],
+  "archive": "W39_PRISM_data.zip",
+  "archive_published_md5": "md5:72b84bcb77a175b31f207751ca9e7e7e",
+  "archive_full_md5_locally_verified": false,
+  "retrieval": "HTTP range-supported archive prefix and central directory; selected members decoded with zip CRC and separately pinned SHA256",
+  "source_url": "https://zenodo.org/api/records/7388032",
+  "accessed_utc_date": "2026-10-14"
+}
