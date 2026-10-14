@@ -1,0 +1,31 @@
+{
+  "protocol": "physical-grid-v1",
+  "seeds": [203, 307, 401, 503, 601],
+  "data_seed": 681193,
+  "training_repeats_per_state": 64,
+  "validation_repeats_per_state": 32,
+  "test_repeats_per_state": 32,
+  "hidden_width": 32,
+  "training_steps": 800,
+  "batch_size": 256,
+  "learning_rate": 0.003,
+  "ridge_penalty": 1.0,
+  "nuisance_dilutions": [0.0, 0.05, 0.1],
+  "width_cap_dex": 0.6,
+  "coverage_floor": 0.85,
+  "acceptance_floor": 0.7,
+  "required_seed_passes": 4,
+  "neural_rmse_ratio_to_augmented_ridge": 0.9,
+  "neural_nuisance_response_ratio": 0.75,
+  "neural_clean_rmse_ratio": 1.1,
+  "neural_clean_rmse_slack_dex": 0.02,
+  "primary_conditions": [
+    {"name": "clean", "shift_index": 1, "dilution": 0.0},
+    {"name": "gray", "shift_index": 1, "dilution": 0.1},
+    {"name": "shift_minus", "shift_index": 0, "dilution": 0.0},
+    {"name": "shift_plus", "shift_index": 2, "dilution": 0.0},
+    {"name": "combined_minus", "shift_index": 0, "dilution": 0.1},
+    {"name": "combined_plus", "shift_index": 2, "dilution": 0.1}
+  ],
+  "secondary_condition": {"name": "off_grid", "shift_index": 3, "dilution": 0.025}
+}
