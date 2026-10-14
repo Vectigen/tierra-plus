@@ -29,7 +29,7 @@ def _fingerprint(parts: list[str]) -> str:
 
 
 def _write_npz(path: Path, arrays: dict[str, FloatArray]) -> None:
-    """Write stable NPZ bytes so the demonstration hashes replay exactly."""
+    """Write stable NPZ bytes for exact replay in the same numerical environment."""
     with zipfile.ZipFile(path, "w") as archive:
         for name in sorted(arrays):
             handle = BytesIO()

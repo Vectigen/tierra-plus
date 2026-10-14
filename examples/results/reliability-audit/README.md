@@ -40,8 +40,13 @@ uv run python -m examples.reliability_audit_demo --output "$AUDIT_DEMO/run"
 The command creates bounded, hashed support/calibration/validation/observation
 bundles plus `full-heldout-report.json`, `interior-label-report.json`,
 `wrong-family-report.json`, `controls.json` and `demo-design.json`. The NPZ writer
-uses stable member order and timestamps; two independent runs produced identical
-report bytes. Every report records both archive and manifest SHA-256 values.
+uses stable member order and timestamps. The recorded artifact digests preserve the
+macOS reference run, and repeated runs in the same numerical environment produce
+identical bytes. Different BLAS or platform implementations can change low-order
+floating-point values and therefore report bytes. Portable replay keeps decisions,
+counts, gates, reasons and identities exact, and compares floating metrics with
+absolute tolerance 1e-9 and relative tolerance 1e-12. Every report records both
+archive and manifest SHA-256 values.
 
 The machine-readable [record](record.json) contains the gates, counts, Wilson
 intervals, source-grid identities and output hashes. Read the

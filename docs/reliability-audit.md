@@ -88,7 +88,10 @@ that did not apply the boundary rule during validation is retained privately as
 invalidated development evidence. All of these states and outcomes are exposed, so
 none is fresh atmospheric evidence. The
 [standalone four-case record](https://github.com/Vectigen/tierra-plus/blob/main/examples/results/reliability-audit/README.md)
-preserves the exact gates, Wilson intervals and deterministic output hashes.
+preserves the exact gates, Wilson intervals and macOS reference-run output hashes.
+Exact report bytes are expected only within the same numerical environment;
+portable replay compares low-order floating metrics with absolute tolerance 1e-9
+and relative tolerance 1e-12 while keeping decisions and counts exact.
 
 To audit prepared bundles directly:
 

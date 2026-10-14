@@ -6,6 +6,7 @@
     "interior-label-report.json": "bfc9614402708536f0e1d7473915eac5c787652b44f9c9a232bf59676af7ea9c",
     "wrong-family-report.json": "acfaae944edbf10993af7cb6f567c49ee62b3f397cba6d471acaaa0059db0920"
   },
+  "artifact_hash_scope": "macOS reference run; exact byte replay is expected only within the same numerical environment",
   "cases": {
     "fixed_photochemical_observation": {
       "decision": "abstain",
@@ -69,6 +70,64 @@
     "score_quantile": 0.9
   },
   "fresh_validation": false,
+  "input_identities": {
+    "photochemical-observation": {
+      "data_sha256": "fe45aa001c922177095f261849e318dcb3273d22695c0a26971931356e08b188",
+      "dataset_id": "photochemical-observation",
+      "manifest_sha256": "01e9c3e5e536fc82d18d43b06aa00b8fb7eaa363eb9fe04a4afb92bfb89483b9",
+      "source": "doi:10.5281/zenodo.7236759; exposed photochemical family",
+      "source_fingerprint": "a55d50b025adc866618620fae78c85372d90aabbe7da434422859e57f7481a4c",
+      "states": 1
+    },
+    "rcte-calibration": {
+      "data_sha256": "d21b29578fba491a21c785043db7c79755d0ffc5503dc76c1f58f0c0b57fa9a1",
+      "dataset_id": "rcte-calibration",
+      "manifest_sha256": "edf5fc7fe8e8583b2de6071f6fd5537366650026e95dd7a1d5990bdff3fb3c70",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "1c788e24d6635375dc5b3790a927b975fedc4ddd203c79359083d9486bc611e7",
+      "states": 12
+    },
+    "rcte-full-calibration": {
+      "data_sha256": "baf3ed012865d69157dbe535240ea85ef77aaa7b282b6e027fcfa5f198c573af",
+      "dataset_id": "rcte-full-calibration",
+      "manifest_sha256": "a1d96a1e7bdce8ea007798d1ab6ccd69179f0599ca322b2ff00d0296723ec966",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "70e1144e74cf02bab9314054e79026ed3afbf955aef2b732e36b51b9e272eb11",
+      "states": 32
+    },
+    "rcte-full-validation": {
+      "data_sha256": "b6781dd740df040d795afaa4d5490bb2bf3627b7dabef9571fd0a5c050b11407",
+      "dataset_id": "rcte-full-validation",
+      "manifest_sha256": "da1378b0c1252fb716ce026546a0a29c57ad47e09e8bbb15d79fd31a7dc90d47",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "fccb6de31dde5b832827052e0e4010d6a85a63199c1489c18b5e567502b7a6e2",
+      "states": 32
+    },
+    "rcte-observation": {
+      "data_sha256": "4424f9d1940ce07ab0a8067f3c8c6d0fd5f174163c78568b119cf3f18be46107",
+      "dataset_id": "rcte-observation",
+      "manifest_sha256": "2cfe9928f08826cebd81b011bc8ebe637bfddfb77aecc2ec2624f0e6cb3327bc",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "fe503f4663bc6f8f8ae7b6f7d328f754066fa9fc5b1661fd22eacdd266a7a055",
+      "states": 1
+    },
+    "rcte-support": {
+      "data_sha256": "cdea4a7adeedfd16a6b06524b35a62ed405b8a4e1874f00b642405f5d998633f",
+      "dataset_id": "rcte-support",
+      "manifest_sha256": "89d4aa79e5c04c8d4f549ac10f8ed518f49ea58aa9bc7c569b44f537c159e835",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "1d7a3c4f7dc931b845a89cc3a38c225f281ebb0550b8df14a385eb26f41fde0d",
+      "states": 128
+    },
+    "rcte-validation": {
+      "data_sha256": "91f815130fe3042281438d55ed2311e89f20d144e4cbb9a926f10be53127673a",
+      "dataset_id": "rcte-validation",
+      "manifest_sha256": "1f88b3b4e86ffceb727b52a1032ce12631985da81ea33eddccf24f028e826340",
+      "source": "doi:10.5281/zenodo.7236759; exploratory exposed PICASO RCTE subsets",
+      "source_fingerprint": "618d0f0d80667426a71399fe1fe3f8bc5ecf78eae1f51d6cd6ceabe9fd4d8c9a",
+      "states": 12
+    }
+  },
   "inputs": {
     "photochemical_grid_sha256": "18b8a61bed2291e418a13d0663284daa7ab1dfa2a22bea01569b38d6bd6aeb12",
     "rcte_grid_sha256": "cc6ff2c163069cfb1ab5b8172b3e5da963b9993610a42af6ef7d063c9af5c013"
@@ -76,5 +135,5 @@
   "method_source_sha256": "96c7bf99c036dd7ebef39c1e6c02b5337e72dd4ad5e0e0d80a210e3cb4106200",
   "schema_version": 1,
   "status": "exploratory_negative",
-  "writer_source_sha256": "bbda86730b1546d77fcb445509fa30ca58ac09b6de6d3d806a43d76f446a9952"
+  "writer_source_sha256": "d47636c85aab54da36b24bd06c851c2090260ae3582006a2cc8c056887f8c0b0"
 }

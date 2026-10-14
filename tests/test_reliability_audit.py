@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import hashlib
 import io
 import json
@@ -364,6 +365,47 @@ def test_criteria_reject_invalid_gates() -> None:
         AuditCriteria(score_quantile=1.0)
 
 
+def _assert_recorded_numeric_metrics(
+    reports: dict[str, dict[str, object]], record: dict[str, object]
+) -> None:
+    """Compare public metrics while allowing only platform-scale rounding."""
+    tolerance = {"abs": 1e-9, "rel": 1e-12}
+    cases = record["cases"]
+    assert isinstance(cases, dict)
+    full_case = cases["full_state_qualification"]
+    interior_case = cases["interior_label_software_example"]
+    wrong_case = cases["fixed_photochemical_observation"]
+    assert isinstance(full_case, dict)
+    assert isinstance(interior_case, dict)
+    assert isinstance(wrong_case, dict)
+    full_score = reports["full"]["score_calibration"]
+    interior_score = reports["interior"]["score_calibration"]
+    wrong_observation = reports["wrong"]["observation"]
+    assert isinstance(full_score, dict)
+    assert isinstance(interior_score, dict)
+    assert isinstance(wrong_observation, dict)
+    full_validation = full_score["validation"]
+    interior_validation = interior_score["validation"]
+    assert isinstance(full_validation, dict)
+    assert isinstance(interior_validation, dict)
+    for key in ("acceptance", "acceptance_wilson95", "accepted_coverage"):
+        assert full_validation[key] == pytest.approx(full_case[key], **tolerance)
+        assert interior_validation[key] == pytest.approx(interior_case[key], **tolerance)
+    assert full_validation["accepted_coverage_wilson95"] == pytest.approx(
+        full_case["accepted_coverage_wilson95"], **tolerance
+    )
+    assert interior_validation["accepted_coverage_wilson95"] == pytest.approx(
+        interior_case["accepted_coverage_wilson95"], **tolerance
+    )
+    assert full_score["threshold"] == pytest.approx(full_case["score_threshold"], **tolerance)
+    assert wrong_observation["minimum_chi2"] == pytest.approx(
+        wrong_case["minimum_chi2"], **tolerance
+    )
+    assert wrong_observation["score_threshold"] == pytest.approx(
+        wrong_case["score_threshold"], **tolerance
+    )
+
+
 def test_physical_demo_replays_public_four_case_record(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
@@ -371,15 +413,27 @@ def test_physical_demo_replays_public_four_case_record(
 
     output = tmp_path / "physical-demo"
     demo.run(output)
+    summary = json.loads(capsys.readouterr().out)
     record_path = Path(__file__).resolve().parents[1] / "examples/results/reliability-audit"
     record = json.loads((record_path / "record.json").read_text())
 
-    for name, expected in record["artifacts"].items():
-        assert hash_path(output / name) == expected
+    assert record["artifact_hash_scope"].startswith("macOS reference run")
+    assert record["artifacts"] == {
+        "controls.json": "32f0a5c29bb5938110c4c4cdd14db5c20d280b4b6ce3ed0a5db9b4dfdbffe006",
+        "demo-design.json": "285dd321dcf34bd5c1a0644adf935ce266a8ec186cd1f59f3328b8540bfd716f",
+        "full-heldout-report.json": (
+            "bac1f9d39eae686d7472a3436b02b88b3a93663a40b328b30309f18171398bce"
+        ),
+        "interior-label-report.json": (
+            "bfc9614402708536f0e1d7473915eac5c787652b44f9c9a232bf59676af7ea9c"
+        ),
+        "wrong-family-report.json": (
+            "acfaae944edbf10993af7cb6f567c49ee62b3f397cba6d471acaaa0059db0920"
+        ),
+    }
     assert hash_path(Path(demo.__file__)) == record["writer_source_sha256"]
     method = Path(__file__).resolve().parents[1] / "src/tierra_plus/reliability.py"
     assert hash_path(method) == record["method_source_sha256"]
-    summary = json.loads(capsys.readouterr().out)
     assert summary == {
         "full_heldout": "abstain",
         "geometry_mismatch": "rejected",
@@ -387,3 +441,84 @@ def test_physical_demo_replays_public_four_case_record(
         "output": str(output),
         "photochemical_observation": "abstain",
     }
+
+    # Artifact bytes are deterministic within one numerical environment. Across
+    # BLAS/platform implementations, low-order reductions can change JSON floats.
+    replay = tmp_path / "same-host-replay"
+    demo.run(replay)
+    capsys.readouterr()
+    for name in record["artifacts"]:
+        assert hash_path(output / name) == hash_path(replay / name)
+
+    full = json.loads((output / "full-heldout-report.json").read_text())
+    full_case = record["cases"]["full_state_qualification"]
+    full_validation = full["score_calibration"]["validation"]
+    assert full["criteria"] == record["criteria"]
+    assert full["decision"] == full_case["decision"]
+    assert full["reasons"] == [
+        "validation_acceptance_below_floor",
+        "observation_score_above_calibrated_threshold",
+        "observation_interval_touches_support_boundary",
+    ]
+    assert full["score_calibration"]["qualified"] is False
+    assert full["score_calibration"]["qualification_failures"] == [full_case["reason"]]
+    assert full_validation["states"] == full_case["validation_states"]
+    assert full_validation["accepted"] == full_case["accepted"]
+    assert full_validation["accepted_covered"] == full_case["accepted"]
+    assert full_validation["score_accepted"] == 30
+    assert full_validation["width_accepted"] == 32
+    assert full_validation["boundary_accepted"] == 24
+
+    interior = json.loads((output / "interior-label-report.json").read_text())
+    interior_case = record["cases"]["interior_label_software_example"]
+    interior_validation = interior["score_calibration"]["validation"]
+    assert interior["criteria"] == record["criteria"]
+    assert interior["decision"] == interior_case["decision"]
+    assert interior["reasons"] == []
+    assert interior["score_calibration"]["qualified"] is True
+    assert interior_validation["states"] == interior_case["validation_states"]
+    assert interior_validation["accepted"] == interior_case["accepted"]
+    assert interior_validation["accepted_covered"] == interior_case["accepted"]
+    assert interior["demonstration_context"]["status"] == interior_case["status"]
+
+    wrong = json.loads((output / "wrong-family-report.json").read_text())
+    wrong_case = record["cases"]["fixed_photochemical_observation"]
+    assert wrong["criteria"] == record["criteria"]
+    assert wrong["decision"] == wrong_case["decision"]
+    assert wrong["reasons"] == wrong_case["reasons"]
+    assert wrong["demonstration_context"]["observation"].endswith(
+        f"index {wrong_case['state_index']}"
+    )
+
+    reports = {"full": full, "interior": interior, "wrong": wrong}
+    _assert_recorded_numeric_metrics(reports, record)
+    identities = {
+        value["dataset_id"]: value
+        for report in reports.values()
+        for value in report["inputs"].values()
+    }
+    assert identities == record["input_identities"]
+
+    changed_threshold = copy.deepcopy(reports)
+    changed_threshold["full"]["score_calibration"]["threshold"] += 1e-4
+    with pytest.raises(AssertionError):
+        _assert_recorded_numeric_metrics(changed_threshold, record)
+    changed_coverage = copy.deepcopy(reports)
+    changed_coverage["full"]["score_calibration"]["validation"]["accepted_coverage"] -= 0.01
+    with pytest.raises(AssertionError):
+        _assert_recorded_numeric_metrics(changed_coverage, record)
+
+    controls = json.loads((output / "controls.json").read_text())
+    geometry_case = record["cases"]["geometry_mismatch"]
+    assert controls["geometry_mismatch"] == {
+        "rejected": True,
+        "reason": geometry_case["reason"],
+    }
+    design = json.loads((output / "demo-design.json").read_text())
+    assert design["full_panel"] == {
+        "calibration_states": 32,
+        "validation_states": 32,
+        "observation": "prespecified exposed photochemical state index 0",
+    }
+    assert design["interior_label_panel"]["calibration_labels"] == interior_case["labels"]
+    assert design["interior_label_panel"]["validation_labels"] == interior_case["labels"]
