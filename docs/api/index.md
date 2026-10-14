@@ -1,5 +1,16 @@
 # API reference
 
+- `tierra_plus.diagnostics.spectral_design(template, sigma, overlap, ...)`:
+  noise-whitened synthetic target/nuisance geometry with explicit shape overlap.
+- `tierra_plus.diagnostics.gaussian_posterior(design, observations, rho=...)`:
+  exact Gaussian conditioning with a correlated unit-variance prior.
+- `tierra_plus.diagnostics.nuisance_projected_gls(design, observations)`:
+  prior-free target estimate and variance; refuses non-identifiable designs.
+- `tierra_plus.diagnostics.constrained_linear_estimator(design, rho, max_nuisance_response)`:
+  optimal linear readout and expected MSE under a nuisance-response cap.
+- `tierra_plus.diagnostics.network.fit(x, y, seed=..., ...)`:
+  seeded NumPy tanh regressor with training-only normalization, explicit hidden
+  activations, paired direction discovery and reloadable numerical state.
 - `tierra_plus.models.Spectrum(wavelength_microns, flux, uncertainty=None)`:
   immutable spectrum values with finite-array and grid validation.
 - `tierra_plus.inference.spectral.UniformPrior(name, lower, upper)`:
@@ -15,4 +26,6 @@
   normalized weights for fixed spectra, not fitted-model marginal likelihoods.
 - `tierra_plus.provenance`: content hashing, append-only run-log and replay-manifest helpers.
 
-See the source docstrings for parameter definitions and the tutorial for a complete run.
+See the source docstrings for parameter definitions, the
+[causal protocol](../causal-reliability-protocol.md) for experimental assumptions,
+and the [tutorial](../tutorials/index.md) for the supporting nested-sampling run.

@@ -7,6 +7,12 @@ physical-validation gates below. A failed hidden-direction correction remains a
 negative result; it does not justify adding more interpretability machinery until
 the simple controls are understood.
 
+The [first fixed study](examples/results/causal-reliability/README.md) reproduced
+H1 in five of five primary seeds and rejected H2 in all five. GLS dominated the
+hidden correction under the primary geometry. The network also missed the fixed
+oracle-effect explanation tolerance. Preserve these results; do not tune the
+existing protocol after inspecting its test set.
+
 ## 1. Move from controlled geometry to a physical simulation grid
 
 Use a licensed, versioned atmosphere grid with hashed assets and independently

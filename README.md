@@ -21,6 +21,13 @@ The protocol fixes the hypotheses, controls, splits and decision rules before th
 main experiment. A hypothesis may fail; running the benchmark is not evidence that
 its correction works.
 
+**First result:** all five primary runs reproduced the specified prior-shift
+failure: mean nominal 90% coverage fell from 89.6% to 45.3%. The proposed hidden
+correction passed zero of five runs and was dominated by the known-geometry GLS
+control. Exact training-prior Bayes also failed under the changed prior, while the
+network's intervention effects exceeded the predeclared oracle-explanation
+tolerance. Read the [results and retained negative findings](examples/results/causal-reliability/README.md).
+
 ## Reproduce the causal experiment
 
 ```bash

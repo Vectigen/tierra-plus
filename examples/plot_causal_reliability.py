@@ -155,7 +155,7 @@ def plot(report: Path, output: Path) -> tuple[Path, Path]:
         }
     )
     fig, axes = plt.subplots(2, 2, figsize=(13.4, 10.8))
-    fig.subplots_adjust(left=0.085, right=0.98, top=0.79, bottom=0.12, hspace=0.52, wspace=0.25)
+    fig.subplots_adjust(left=0.085, right=0.98, top=0.79, bottom=0.17, hspace=0.52, wspace=0.25)
     fig.suptitle(
         "What changes when the nuisance prior changes?", x=0.085, y=0.98, ha="left", fontsize=19
     )
