@@ -26,6 +26,7 @@ causal-reliability-protocol
 physical-grid-protocol
 spectral-adequacy-diagnosis
 reliability-audit
+sonora-photometry-protocol
 theory/index
 tutorials/index
 api/index

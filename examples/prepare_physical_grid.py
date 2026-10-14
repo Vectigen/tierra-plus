@@ -33,7 +33,8 @@ def prepare(archive: Path, output: Path, family: str) -> dict:
     if archive.stat().st_size != size:
         raise ValueError(f"Expected {name}: {size} bytes")
     payload = archive.read_bytes()
-    if hashlib.md5(payload).hexdigest() != md5:
+    # Zenodo's legacy archive identity is MD5; SHA-256 is recorded for derived assets.
+    if hashlib.md5(payload, usedforsecurity=False).hexdigest() != md5:
         raise ValueError("Author archive checksum mismatch")
     observation = ROOT / "examples/data/wasp39-prism/FIREFLy_transit_spec.h5"
     if hashlib.sha256(observation.read_bytes()).hexdigest() != OBSERVATION_HASH:

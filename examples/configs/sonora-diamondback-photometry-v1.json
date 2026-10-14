@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_inference",
+  "frozen_at_utc": "2026-10-14T16:49:32Z",
+  "question": "Can a finite-grid temperature audit calibrated on cloud-free Sonora photometry retain its declared acceptance and coverage on a paired cloudy holdout?",
+  "source": {
+    "title": "The Sonora Substellar Atmosphere Models: Diamondback",
+    "paper": "https://arxiv.org/abs/2402.00758",
+    "doi": "10.5281/zenodo.12735103",
+    "record_api": "https://zenodo.org/api/records/12735103",
+    "license": "CC-BY-4.0",
+    "authors": "Morley et al. (2024)"
+  },
+  "archive": {
+    "file": "photometry.zip",
+    "url": "https://zenodo.org/api/records/12735103/files/photometry.zip/content",
+    "bytes": 244314,
+    "md5": "04e9e4a48883bab44b743d8feaaad759",
+    "sha256": "7210f358c6da317d60a19dffb5b18a398e20a565aebaaa297e521ee9076bbc9c",
+    "maximum_download_bytes": 1000000,
+    "maximum_members": 32,
+    "maximum_uncompressed_bytes": 2000000
+  },
+  "members": [
+    {
+      "path": "photometry/m-0.5_synthetic_photometry_nc.dat",
+      "bytes": 84883,
+      "sha256": "e43b05031b3ea7a6c8062f2152c60483593d0c9238079ac3a9d29d4b84843657",
+      "metallicity_dex": -0.5
+    },
+    {
+      "path": "photometry/m0.0_synthetic_photometry_nc.dat",
+      "bytes": 84070,
+      "sha256": "0afe6d1cba3ed0573d4ef8026f7701991475e21d00e632200ff5dc8b783d72d7",
+      "metallicity_dex": 0.0
+    },
+    {
+      "path": "photometry/m+0.5_synthetic_photometry_nc.dat",
+      "bytes": 84304,
+      "sha256": "872b825f0f284c6e8ac7c686633b22a8301c12029cc53167859dde25d7b23aaa",
+      "metallicity_dex": 0.5
+    }
+  ],
+  "columns": [
+    "temp",
+    "grav",
+    "clouds",
+    "[M/H]",
+    "C/O(xsolar)",
+    "age(Gyr)",
+    "mass(Jup)",
+    "rad(Jup)",
+    "loglum(Sol)",
+    "Y",
+    "J",
+    "H",
+    "K",
+    "Kp",
+    "Ks",
+    "Lp",
+    "Mp",
+    "IRAC1",
+    "IRAC2",
+    "IRAC3",
+    "IRAC4",
+    "W1",
+    "W2",
+    "W3",
+    "W4"
+  ],
+  "photometric_features": [
+    "Y",
+    "J",
+    "H",
+    "K",
+    "Kp",
+    "Ks",
+    "Lp",
+    "Mp",
+    "IRAC1",
+    "IRAC2",
+    "IRAC3",
+    "IRAC4",
+    "W1",
+    "W2",
+    "W3",
+    "W4"
+  ],
+  "expected_grid": {
+    "rows": 1440,
+    "temperatures_k": [900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400],
+    "gravity_m_s2": [31.6, 100.0, 316.0, 1000.0, 3160.0],
+    "metallicity_dex": [-0.5, 0.0, 0.5],
+    "fsed": [0, 1, 2, 3, 4, 8]
+  },
+  "partition": {
+    "target": "effective_temperature_k",
+    "support": {
+      "fsed": [0],
+      "gravity_m_s2": [31.6, 316.0, 3160.0],
+      "expected_states": 144
+    },
+    "calibration": {
+      "fsed": [0],
+      "gravity_m_s2": [100.0],
+      "expected_states": 48
+    },
+    "validation": {
+      "fsed": [0],
+      "gravity_m_s2": [1000.0],
+      "expected_states": 48
+    },
+    "cloud_challenge": {
+      "fsed": [1, 2, 3, 4, 8],
+      "gravity_m_s2": [1000.0],
+      "expected_states": 240,
+      "paired_to": "validation by temperature, gravity and metallicity"
+    }
+  },
+  "planned_evaluation": {
+    "status": "not_run",
+    "noise_seed": [20261014, 2],
+    "independent_sigma_magnitude": 0.05,
+    "likelihood": "independent Gaussian magnitude errors with one free additive grey offset",
+    "score_quantile": 0.9,
+    "minimum_acceptance": 0.7,
+    "minimum_accepted_coverage": 0.85,
+    "maximum_temperature_interval_width_k": 300,
+    "primary_endpoint": "cloud_challenge selective coverage and acceptance under the unchanged cloud-free rule",
+    "no_retry_rule": "One seeded noise realization; do not alter support, partitions, noise, threshold rule or gates after challenge outcomes are visible."
+  },
+  "prospective_rule": "Freeze ingestion, partitions, noise model and gates before the first inference. Validation qualifies the cloud-free rule. The cloudy challenge is evaluated once and cannot tune support, thresholds or gates.",
+  "claim_boundary": "A later pass or failure will describe only this synthetic band-photometry grid. It will not establish reliability for spectra, continuous temperature, real directly imaged planets or other cloud models."
+}

@@ -40,6 +40,12 @@ exercise the accept path; it is invalid as general RCTE qualification. An earlie
 demo that omitted boundary abstention from validation is retained as invalidated
 development evidence, not as a research acceptance.
 
+The next fresh test is a [prospective Sonora Diamondback cloud-omission
+challenge](docs/sonora-photometry-protocol.md). Its CC-BY-4.0 source identities,
+small bounded ingestion path, physical-coordinate partitions, synthetic noise and
+gates are frozen before inference. No Sonora reliability result has been run or
+claimed.
+
 The first controlled experiment uses **synthetic observations and known synthetic labels**, with its
 grid, error scale and target shape anchored to hashed public WASP-39b PRISM assets.
 The target is a template amplitude, not a molecular abundance. This controlled

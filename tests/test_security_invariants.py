@@ -107,6 +107,20 @@ def downloadable_asset():
     )
 
 
+def test_public_asset_download_rejects_non_https_before_network(tmp_path, monkeypatch):
+    asset = replace(downloadable_asset(), download_url="http://example.invalid/asset.bin")
+    called = False
+
+    def download(url, destination):
+        nonlocal called
+        called = True
+
+    monkeypatch.setattr(bootstrap.urllib.request, "urlretrieve", download)
+    with pytest.raises(ValueError, match="HTTPS"):
+        bootstrap.download_verified_asset(asset, tmp_path)
+    assert called is False
+
+
 @pytest.mark.parametrize("interrupted", [False, True])
 def test_failed_download_leaves_no_unverified_public_asset(tmp_path, monkeypatch, interrupted):
     asset = downloadable_asset()

@@ -12,6 +12,7 @@ import sys
 import tempfile
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from tierra_plus.forward.opacity import (
     default_data_root,
@@ -26,6 +27,9 @@ def download_verified_asset(asset: OpacityModelSpec, data_root: Path) -> Path:
     """Publish a downloaded asset only after verification, without overwriting files."""
     if asset.download_url is None:
         raise ValueError("A direct download URL is required")
+    parsed = urlsplit(asset.download_url)
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError("Public asset downloads require an unauthenticated HTTPS URL")
     path = asset.resolve_path(data_root)
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(
@@ -33,7 +37,7 @@ def download_verified_asset(asset: OpacityModelSpec, data_root: Path) -> Path:
     ) as f:
         temporary = Path(f.name)
     try:
-        urllib.request.urlretrieve(asset.download_url, temporary)
+        urllib.request.urlretrieve(asset.download_url, temporary)  # nosec B310
         if hash_path(temporary) != asset.sha256:
             raise ValueError(f"Opacity asset '{asset.identifier}' download hash mismatch")
         # An existing destination, including a concurrently created symlink, must
