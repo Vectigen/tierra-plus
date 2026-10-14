@@ -7,7 +7,9 @@ sources. Assets without a direct download URL must be acquired manually from the
 from __future__ import annotations
 
 import argparse
+import os
 import sys
+import tempfile
 import urllib.request
 from pathlib import Path
 
@@ -16,6 +18,30 @@ from tierra_plus.forward.opacity import (
     load_opacity_manifest,
     verify_opacity_asset,
 )
+from tierra_plus.models import OpacityModelSpec
+from tierra_plus.provenance.hash import hash_path
+
+
+def download_verified_asset(asset: OpacityModelSpec, data_root: Path) -> Path:
+    """Publish a downloaded asset only after verification, without overwriting files."""
+    if asset.download_url is None:
+        raise ValueError("A direct download URL is required")
+    path = asset.resolve_path(data_root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        dir=path.parent, prefix=".tierra-download-", delete=False
+    ) as f:
+        temporary = Path(f.name)
+    try:
+        urllib.request.urlretrieve(asset.download_url, temporary)
+        if hash_path(temporary) != asset.sha256:
+            raise ValueError(f"Opacity asset '{asset.identifier}' download hash mismatch")
+        # An existing destination, including a concurrently created symlink, must
+        # not be replaced or followed. Both names are on the same filesystem.
+        os.link(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return path
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -42,9 +68,7 @@ def main() -> int:
             failures.append(f"missing {asset.identifier}: {path}")
             continue
         if asset.download_url is not None:
-            path.parent.mkdir(parents=True, exist_ok=True)
-            urllib.request.urlretrieve(asset.download_url, path)
-            verify_opacity_asset(asset, data_root=args.data_root)
+            download_verified_asset(asset, args.data_root)
             print(f"downloaded {asset.identifier}: {path}")
             continue
         failures.append(

@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from functools import lru_cache
 from pathlib import Path
 
 from tierra_plus.models import OpacityModelSpec
+from tierra_plus.provenance.hash import hash_path
 
 
 def default_data_root() -> Path:
@@ -66,7 +66,7 @@ def verify_opacity_asset(asset: OpacityModelSpec, data_root: Path | None = None)
     path = asset.resolve_path(root)
     if not path.exists():
         raise FileNotFoundError(f"Opacity asset '{asset.identifier}' is missing at '{path}'.")
-    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    digest = hash_path(path)
     if digest != asset.sha256:
         raise ValueError(
             f"Opacity asset '{asset.identifier}' hash mismatch: "

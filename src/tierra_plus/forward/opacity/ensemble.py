@@ -49,9 +49,23 @@ def gaussian_log_likelihood(observed: Spectrum, candidate: Spectrum) -> float:
         raise ValueError("Observed and candidate spectra must share the same wavelength grid.")
     if observed.uncertainty is None:
         raise ValueError("Observed spectrum must include uncertainties for likelihood evaluation.")
-    residual = np.asarray(observed.flux) - np.asarray(candidate.flux)
     sigma = np.asarray(observed.uncertainty)
-    return float(-0.5 * np.sum((residual / sigma) ** 2 + np.log(2.0 * np.pi * sigma**2)))
+    # Squaring sigma can underflow to zero for valid positive uncertainties.
+    # A representably infinite squared residual means zero likelihood, not NaN.
+    with np.errstate(over="ignore", divide="ignore", invalid="ignore"):
+        residual = np.asarray(observed.flux) - np.asarray(candidate.flux)
+        standardized = residual / sigma
+        # Opposite, very large finite fluxes can overflow their difference even
+        # when division by a large uncertainty would give a finite residual.
+        overflowed = np.isinf(residual)
+        standardized[overflowed] = (
+            np.asarray(observed.flux)[overflowed] / sigma[overflowed]
+            - np.asarray(candidate.flux)[overflowed] / sigma[overflowed]
+        )
+        value = float(-0.5 * np.sum(standardized**2 + np.log(2.0 * np.pi) + 2.0 * np.log(sigma)))
+    if np.isnan(value) or value == np.inf:
+        raise ValueError("Spectrum scales do not give a valid Gaussian log likelihood")
+    return value
 
 
 def posterior_weights_for_case(
@@ -69,19 +83,31 @@ def posterior_weights_for_case(
         raise ValueError("Priors must match a nonempty set of candidates")
     if any(not np.isfinite(v) or v <= 0 for v in prior_weights.values()):
         raise ValueError("Model prior weights must be finite and strictly positive")
-    prior_total = sum(prior_weights.values())
-    log_evidences = {
+    log_priors = {name: log(weight) for name, weight in prior_weights.items()}
+    prior_max = max(log_priors.values())
+    log_prior_total = prior_max + log(sum(np.exp(v - prior_max) for v in log_priors.values()))
+    log_likelihoods = {
         name: gaussian_log_likelihood(case.observed, candidate)
-        + log(prior_weights[name] / prior_total)
         for name, candidate in case.candidates.items()
     }
-    evidence_values = np.asarray(tuple(log_evidences.values()))
-    max_evidence = float(np.max(evidence_values))
-    normalization = float(max_evidence + np.log(np.sum(np.exp(evidence_values - max_evidence))))
-    weights = {
-        name: float(np.exp(log_evidence - normalization))
-        for name, log_evidence in log_evidences.items()
+    log_evidences = {
+        name: likelihood + log_priors[name] - log_prior_total
+        for name, likelihood in log_likelihoods.items()
     }
+    evidence_values = np.asarray(tuple(log_evidences.values()))
+    if np.any(np.isnan(evidence_values) | (evidence_values == np.inf)) or not np.any(
+        np.isfinite(evidence_values)
+    ):
+        raise ValueError("At least one candidate must have finite log evidence")
+    # Center likelihoods before adding priors: at very large negative scales,
+    # adding a small log prior first would round away real prior differences.
+    likelihood_values = np.asarray(tuple(log_likelihoods.values()))
+    with np.errstate(over="ignore"):
+        log_scores = likelihood_values - np.max(likelihood_values)
+    log_scores += np.asarray(tuple(log_priors[name] - prior_max for name in log_likelihoods))
+    unnormalized = np.exp(log_scores - np.max(log_scores))
+    normalized = unnormalized / unnormalized.sum()
+    weights = {name: float(weight) for name, weight in zip(log_evidences, normalized, strict=True)}
     best_model = max(weights, key=lambda name: weights[name])
     return EnsembleWeightResult(weights=weights, log_evidences=log_evidences, best_model=best_model)
 

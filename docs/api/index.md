@@ -24,7 +24,11 @@
   spot_fraction=0, facula_fraction=0)`: quiet-chord stellar intensity mixing.
 - `tierra_plus.forward.opacity.ensemble.posterior_weights_for_case(case, priors=None)`:
   normalized weights for fixed spectra, not fitted-model marginal likelihoods.
+  Extreme positive uncertainties use log-space normalization; an all-zero
+  representable likelihood fails explicitly instead of selecting a NaN winner.
 - `tierra_plus.provenance`: content hashing, append-only run-log and replay-manifest helpers.
+  Structured hashes require string mapping keys and finite JSON numbers. File-byte
+  SHA256 and structured-payload digests retain separate identity namespaces.
 
 See the source docstrings for parameter definitions, the
 [causal protocol](../causal-reliability-protocol.md) for experimental assumptions,

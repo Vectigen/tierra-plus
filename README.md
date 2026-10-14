@@ -137,4 +137,10 @@ For scientific outputs, retain input and source hashes, configuration, model wei
 split identities, raw predictions and failed checks. A passing software test does
 not establish reliability on real observations.
 
+Public-data downloads become visible at their destination only after checksum
+verification; failed transfers are discarded and existing files are never replaced.
+Use the locked development environment for patched tooling dependencies. Tagged
+releases build without publishing credentials, then pass the built distributions
+to a separate publishing job.
+
 Apache-2.0 licensed. See [LICENSE](LICENSE).
