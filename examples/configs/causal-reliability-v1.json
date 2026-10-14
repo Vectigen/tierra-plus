@@ -1,0 +1,60 @@
+{
+  "protocol": "tierra-causal-reliability-v1",
+  "training_seeds": [
+    11,
+    23,
+    42,
+    71,
+    101
+  ],
+  "data_seed": 20261014,
+  "train_count": 8192,
+  "validation_count": 1024,
+  "discovery_count": 1024,
+  "test_count": 4096,
+  "training_correlation": 0.9,
+  "test_correlations": [
+    0.9,
+    0.0,
+    -0.9
+  ],
+  "overlaps": [
+    0.0,
+    0.95,
+    1.0
+  ],
+  "target_snr": 2.0,
+  "nuisance_snr": 6.0,
+  "hidden_width": 32,
+  "training_steps": 800,
+  "batch_size": 256,
+  "learning_rate": 0.003,
+  "ridge_penalty": 1.0,
+  "intervention_half_width": 1.0,
+  "random_direction_count": 10,
+  "interval_probability": 0.9,
+  "thresholds": {
+    "iid_rmse_ratio_to_bayes_max": 1.25,
+    "reversal_rmse_ratio_min": 1.5,
+    "reversal_coverage_upper_max": 0.85,
+    "nuisance_response_ratio_max": 0.2,
+    "signal_response_ratio_min": 0.8,
+    "required_training_seeds": 4,
+    "oracle_effect_discrepancy_max": 0.1,
+    "iid_rmse_ratio_to_constrained_linear_max": 1.1,
+    "response_denominator_floor": 1e-06
+  },
+  "discovery_intervention_half_width": 0.5,
+  "held_out_intervention_half_widths": [
+    1.0,
+    2.0
+  ],
+  "hidden_intervention": {
+    "layer": "single tanh hidden activation",
+    "estimator": "zero-intercept least-squares paired hidden difference on delta_b",
+    "normalization": "Euclidean unit vector",
+    "centering": "pooled discovery hidden mean",
+    "operation": "remove one centered Euclidean projection; no refit",
+    "uncertainty": "separate validation-only residual SD for each frozen predictor"
+  }
+}
